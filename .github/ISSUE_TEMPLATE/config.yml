@@ -1,0 +1,11 @@
+blank_issues_enabled: true
+contact_links:
+  - name: 💬 Discusión General
+    url: https://github.com/UriAntonio/Constituci-n-Administrativa-de-Untravel/discussions
+    about: Para conversaciones que no requieren acción específica
+  - name: 📖 Guía de Contribución
+    url: https://github.com/UriAntonio/Constituci-n-Administrativa-de-Untravel/blob/main/CONTRIBUTING.md
+    about: Lee cómo contribuir antes de crear una propuesta
+  - name: 📜 Constitución Completa
+    url: https://github.com/UriAntonio/Constituci-n-Administrativa-de-Untravel/blob/main/CONSTITUTION.md
+    about: Lee el texto completo de la Constitución

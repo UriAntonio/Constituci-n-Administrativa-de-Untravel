@@ -1,0 +1,49 @@
+# Archivos temporales
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Directorios de Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Archivos de IDE/Editores
+.vscode/
+.idea/
+*.iml
+*.sublime-project
+*.sublime-workspace
+
+# Archivos de sistema
+desktop.ini
+.Spotlight-V100
+.Trashes
+
+# Archivos de backup
+*.bak
+*.backup
+*.old
+
+# Archivos de log
+*.log
+logs/
+
+# Archivos de cache
+.cache/
+*.cache
+
+# Archivos de build (si se agregan en el futuro)
+dist/
+build/
+out/
+
+# Archivos personales de desarrollo
+/tmp/
+/.tmp/
+/temp/
