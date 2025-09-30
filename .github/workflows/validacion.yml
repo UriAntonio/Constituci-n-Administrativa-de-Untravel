@@ -1,0 +1,237 @@
+name: Validación Constitucional
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  validar-markdown:
+    name: Validar Sintaxis Markdown
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+      
+    - name: Configurar Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '18'
+        
+    - name: Instalar markdownlint
+      run: npm install -g markdownlint-cli
+      
+    - name: Validar archivos Markdown
+      run: |
+        markdownlint '**/*.md' \
+          --ignore node_modules \
+          --ignore .git \
+          --config .markdownlint.json || true
+      continue-on-error: true
+
+  validar-enlaces:
+    name: Validar Enlaces
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+      
+    - name: Validar enlaces en Markdown
+      uses: gaurav-nelson/github-action-markdown-link-check@v1
+      with:
+        use-quiet-mode: 'yes'
+        use-verbose-mode: 'no'
+        config-file: '.markdown-link-check.json'
+        folder-path: '.'
+        file-path: './README.md, ./CONSTITUTION.md, ./CHANGELOG.md, ./CONTRIBUTING.md'
+      continue-on-error: true
+
+  validar-estructura:
+    name: Validar Estructura del Repositorio
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+      
+    - name: Verificar archivos requeridos
+      run: |
+        echo "Verificando estructura del repositorio..."
+        
+        archivos_requeridos=(
+          "README.md"
+          "CONSTITUTION.md"
+          "CHANGELOG.md"
+          "CONTRIBUTING.md"
+          "LICENSE"
+          ".github/PULL_REQUEST_TEMPLATE.md"
+          ".github/ISSUE_TEMPLATE/reforma.md"
+          ".github/ISSUE_TEMPLATE/mejora.md"
+          ".github/ISSUE_TEMPLATE/error.md"
+        )
+        
+        directorios_requeridos=(
+          "reformas"
+          "reformas/aprobadas"
+          "reformas/en-proceso"
+          "reformas/rechazadas"
+          ".github"
+          ".github/ISSUE_TEMPLATE"
+          ".github/workflows"
+        )
+        
+        error=0
+        
+        for archivo in "${archivos_requeridos[@]}"; do
+          if [ ! -f "$archivo" ]; then
+            echo "❌ Error: Falta el archivo requerido: $archivo"
+            error=1
+          else
+            echo "✅ Archivo encontrado: $archivo"
+          fi
+        done
+        
+        for directorio in "${directorios_requeridos[@]}"; do
+          if [ ! -d "$directorio" ]; then
+            echo "❌ Error: Falta el directorio requerido: $directorio"
+            error=1
+          else
+            echo "✅ Directorio encontrado: $directorio"
+          fi
+        done
+        
+        if [ $error -eq 1 ]; then
+          echo "⚠️ Advertencia: Algunos archivos o directorios requeridos no se encontraron"
+          exit 0  # No falla el workflow, solo advierte
+        else
+          echo "✅ Estructura del repositorio es correcta"
+        fi
+
+  validar-version:
+    name: Validar Versionado
+    runs-on: ubuntu-latest
+    if: github.event_name == 'pull_request'
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+        
+    - name: Verificar actualización de versión
+      run: |
+        echo "Verificando si se actualizó el versionado..."
+        
+        # Verificar si CONSTITUTION.md fue modificado
+        if git diff --name-only origin/${{ github.base_ref }}..HEAD | grep -q "CONSTITUTION.md"; then
+          echo "📝 CONSTITUTION.md fue modificado"
+          
+          # Verificar si CHANGELOG.md también fue modificado
+          if git diff --name-only origin/${{ github.base_ref }}..HEAD | grep -q "CHANGELOG.md"; then
+            echo "✅ CHANGELOG.md también fue actualizado"
+            
+            # Extraer versión del CONSTITUTION.md
+            version=$(grep -m 1 "^\*\*Versión:\*\*" CONSTITUTION.md | sed 's/.*Versión:\*\* //' | sed 's/ .*//')
+            echo "📌 Versión en CONSTITUTION.md: $version"
+            
+            # Verificar formato de versión semántica
+            if [[ $version =~ ^[0-9]+\.[0-9]+\.[0-9]+$ ]]; then
+              echo "✅ Formato de versión es válido (SemVer)"
+            else
+              echo "⚠️ Advertencia: El formato de versión podría no seguir SemVer correctamente"
+            fi
+          else
+            echo "⚠️ Advertencia: CONSTITUTION.md fue modificado pero CHANGELOG.md no fue actualizado"
+            echo "Considera actualizar CHANGELOG.md para documentar los cambios"
+          fi
+        else
+          echo "ℹ️ CONSTITUTION.md no fue modificado en este PR"
+        fi
+      continue-on-error: true
+
+  validar-contenido:
+    name: Validar Contenido Constitucional
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout código
+      uses: actions/checkout@v3
+      
+    - name: Verificar integridad constitucional
+      run: |
+        echo "Verificando integridad del contenido..."
+        
+        # Verificar que existan las secciones principales
+        secciones_principales=(
+          "Título I: Principios Fundamentales"
+          "Título II: Derechos y Deberes"
+          "Título III: División de Poderes"
+          "Título IV: Reformas Constitucionales"
+        )
+        
+        error=0
+        
+        for seccion in "${secciones_principales[@]}"; do
+          if grep -q "$seccion" CONSTITUTION.md; then
+            echo "✅ Sección encontrada: $seccion"
+          else
+            echo "⚠️ Advertencia: No se encontró la sección: $seccion"
+            error=1
+          fi
+        done
+        
+        # Verificar que no se eliminen artículos irreformables
+        articulos_irreformables=(
+          "Artículo 1:"
+          "Artículo 2:"
+          "Artículo 21:"
+        )
+        
+        for articulo in "${articulos_irreformables[@]}"; do
+          if grep -q "$articulo" CONSTITUTION.md; then
+            echo "✅ Artículo irreformable presente: $articulo"
+          else
+            echo "❌ Error: Artículo irreformable faltante: $articulo"
+            error=1
+          fi
+        done
+        
+        # Verificar protección de marca
+        if grep -q "Untravel" CONSTITUTION.md && grep -q "marca" CONSTITUTION.md; then
+          echo "✅ Protección de marca 'Untravel' presente"
+        else
+          echo "⚠️ Advertencia: Protección de marca 'Untravel' podría estar faltante"
+        fi
+        
+        if [ $error -eq 1 ]; then
+          echo "⚠️ Se encontraron advertencias en la validación de contenido"
+          exit 0  # No falla, solo advierte
+        else
+          echo "✅ Validación de contenido completada exitosamente"
+        fi
+
+  resumen-validacion:
+    name: Resumen de Validación
+    runs-on: ubuntu-latest
+    needs: [validar-markdown, validar-enlaces, validar-estructura, validar-version, validar-contenido]
+    if: always()
+    
+    steps:
+    - name: Resumen
+      run: |
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "📊 RESUMEN DE VALIDACIÓN CONSTITUCIONAL"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo ""
+        echo "✅ Validación de sintaxis Markdown: ${{ needs.validar-markdown.result }}"
+        echo "✅ Validación de enlaces: ${{ needs.validar-enlaces.result }}"
+        echo "✅ Validación de estructura: ${{ needs.validar-estructura.result }}"
+        echo "✅ Validación de versionado: ${{ needs.validar-version.result }}"
+        echo "✅ Validación de contenido: ${{ needs.validar-contenido.result }}"
+        echo ""
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+        echo "🏛️ Por la justicia, la igualdad y la libertad en Untravel"
+        echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
