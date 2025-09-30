@@ -14,14 +14,23 @@ Solo se archivan versiones **MAJOR** (X.0.0) que representen:
 
 | Versión | Fecha | Descripción | Constituyentes |
 |---------|-------|-------------|----------------|
-| [v1.0.0](v1.0.0-CONSTITUTION.md) | 14 Oct 2024 | Primera promulgación | *Constituyentes originales* |
-| [v2.0.0](v2.0.0-CONSTITUTION.md) | 27 Ene 2025 | Segunda revisión | *Asamblea v2.0.0* |
+| [v1.0.0](v1.0.0-CONSTITUTION.md) | 14 Oct 2024 | **Constitución Social Alfa** - Basada en documento histórico de 2020 | AntonyKlaric👑, TonyBlogs👑, MrWillsonXwX👑, Kteimporta007👑, Mariholaxd, xxgotayxx21 |
+| [v2.0.0](v2.0.0-CONSTITUTION.md) | 27 Ene 2025 | Segunda revisión constitucional | *Asamblea v2.0.0* |
 | [v3.0.0](v3.0.0-CONSTITUTION.md) | 30 Sep 2025 | Tercera revisión - Reestructuración completa | KlarixMx, DeadLuis2324, ZEro Proe, StarbelleQwQ, xMollinaKille, SaamTorress, Lulu81957 |
 
 ## 🔍 **Comparación entre Versiones**
 
+### 🏛️ **Historia Fundacional (2019-2020)**
+- **27 Jul 2019, 9:59 AM**: Fundación oficial de Untravel
+- **23 Ene 2020**: Creación de la "Constitución Social Alfa" por AntonyKlaric👑
+- **Cinco Generaciones**: Evolución desde los orígenes hasta el sistema actual
+- **Old Históricos**: Dannyzomcraft (1er Old), AntonioKzyax (2do Old)
+- **Sistema Alfa**: Establecimiento del corazón administrativo de Untravel
+
 ### v1.0.0 → v2.0.0
-- [Pendiente documentar cambios específicos]
+- **Transición**: De Constitución Social Alfa a estructura política formal
+- **Modernización**: Adaptación de principios históricos a gobierno tripartito
+- **Preservación**: Mantenimiento del espíritu y valores originales
 
 ### v2.0.0 → v3.0.0
 - **Reestructuración**: De 23 artículos → 8 Títulos organizados
