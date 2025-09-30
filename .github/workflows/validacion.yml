@@ -166,10 +166,10 @@ jobs:
         
         # Verificar que existan las secciones principales
         secciones_principales=(
-          "Título I: Principios Fundamentales"
-          "Título II: Derechos y Deberes"
-          "Título III: División de Poderes"
-          "Título IV: Reformas Constitucionales"
+          "TÍTULO I: PRINCIPIOS FUNDAMENTALES"
+          "TÍTULO II: DERECHOS Y GARANTÍAS FUNDAMENTALES"
+          "TÍTULO III: ORGANIZACIÓN DEL PODER PÚBLICO"
+          "TÍTULO VII: REFORMAS Y PROCEDIMIENTOS CONSTITUCIONALES"
         )
         
         error=0
