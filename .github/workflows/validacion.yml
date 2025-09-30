@@ -78,6 +78,7 @@ jobs:
           "reformas/aprobadas"
           "reformas/en-proceso"
           "reformas/rechazadas"
+          "versions"
           ".github"
           ".github/ISSUE_TEMPLATE"
           ".github/workflows"
@@ -108,6 +109,28 @@ jobs:
           exit 0  # No falla el workflow, solo advierte
         else
           echo "✅ Estructura del repositorio es correcta"
+        fi
+        
+        # Validar archivo de versiones históricas
+        if [ -f "versions/README.md" ]; then
+          echo "✅ Archivo de versiones históricas encontrado"
+          
+          # Contar versiones archivadas
+          versiones_count=$(find versions -name "v*.0.0-CONSTITUTION.md" | wc -l)
+          echo "📚 Versiones históricas archivadas: $versiones_count"
+          
+          # Verificar que cada versión tenga marcador de archivo histórico
+          for archivo in versions/v*.0.0-CONSTITUTION.md; do
+            if [ -f "$archivo" ]; then
+              if grep -q "ARCHIVO HISTÓRICO" "$archivo"; then
+                echo "✅ $(basename $archivo): Marcado correctamente como histórico"
+              else
+                echo "⚠️ $(basename $archivo): Falta marcador de archivo histórico"
+              fi
+            fi
+          done
+        else
+          echo "⚠️ Advertencia: Archivo versions/README.md no encontrado"
         fi
 
   validar-version:

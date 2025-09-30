@@ -1,7 +1,7 @@
 # 🏛️ Constitución Administrativa de Untravel
 
 [![Licencia: CC BY-SA 4.0](https://img.shields.io/badge/Licencia-CC%20BY--SA%204.0-lightgrey.svg)](https://creativecommons.org/licenses/by-sa/4.0/)
-[![Versión](https://img.shields.io/badge/Versión-1.0.0-blue.svg)](./CHANGELOG.md)
+[![Versión](https://img.shields.io/badge/Versión-3.0.0-blue.svg)](./CHANGELOG.md)
 [![Minecraft](https://img.shields.io/badge/Minecraft-Bedrock-green.svg)](https://www.minecraft.net/es-es/about-minecraft)
 
 **Repositorio constitucional oficial de la Unión Untravel** - Comunidad gaming de Minecraft Bedrock
@@ -39,10 +39,16 @@ El presente documento establece los principios y estructura de gobierno para la 
 ├── 📋 CHANGELOG.md                 # Historial de reformas
 ├── 🤝 CONTRIBUTING.md              # Guía para contribuir
 ├── ⚖️ LICENSE                      # CC BY-SA 4.0
+├── 📁 versions/                    # 🆕 Archivo histórico de versiones MAJOR
+│   ├── 📄 README.md               # Guía de versiones históricas
+│   ├── 📜 v1.0.0-CONSTITUTION.md  # Primera constitución (Oct 2024)
+│   ├── 📜 v2.0.0-CONSTITUTION.md  # Segunda revisión (Ene 2025)
+│   └── 📜 v3.0.0-CONSTITUTION.md  # Tercera revisión (Sep 2025)
 ├── 📁 reformas/                    # Archivo de reformas históricas
 │   ├── 📁 aprobadas/              # Reformas implementadas
 │   ├── 📁 en-proceso/             # Reformas en debate
 │   └── 📁 rechazadas/             # Reformas no aprobadas
+├── 🔧 compare-versions.sh          # 🆕 Script para comparar versiones
 └── 📁 .github/                    # Configuración de GitHub
     ├── 📁 ISSUE_TEMPLATE/         # Plantillas para Issues
     │   ├── reforma.md             # Propuesta de reforma
@@ -79,14 +85,47 @@ Nuestra comunidad se organiza bajo un sistema **tripartito de poderes** con cara
 
 ---
 
-## 📚 Documentos Principales
+## 📚 Sistema de Versiones Históricas
+
+### 🆕 **Nueva Funcionalidad v3.0.0**
+
+Ahora mantenemos un **archivo histórico completo** de todas las versiones MAJOR de la Constitución para facilitar:
+
+- 📖 **Consulta Histórica**: Acceso directo a versiones pasadas
+- ⚖️ **Referencias Legales**: Citar versiones específicas en procesos
+- 🎓 **Educación Cívica**: Estudiar la evolución constitucional
+- 🔍 **Comparación Visual**: Entender cambios entre versiones
+
+### 📊 **Herramientas de Comparación**
+
+```bash
+# Listar versiones disponibles
+./compare-versions.sh list
+
+# Comparar dos versiones específicas
+./compare-versions.sh v2.0.0 v3.0.0
+
+# Comparar versión histórica con actual
+./compare-versions.sh v1.0.0 current
+```
+
+### 📋 **Documentos Principales**
 
 | Documento | Descripción | Enlace |
 |-----------|-------------|--------|
-| 📜 **Constitución** | Texto completo con todos los artículos | [CONSTITUTION.md](./CONSTITUTION.md) |
-| 📋 **Changelog** | Historial de todas las reformas | [CHANGELOG.md](./CHANGELOG.md) |
+| 📜 **Constitución Actual** | Texto vigente con todos los artículos | [CONSTITUTION.md](./CONSTITUTION.md) |
+| 📚 **Archivo Histórico** | Versiones MAJOR preservadas | [versions/](./versions/) |
+| 📋 **Changelog** | Historial completo de reformas | [CHANGELOG.md](./CHANGELOG.md) |
 | 🤝 **Contribuir** | Guía para proponer reformas | [CONTRIBUTING.md](./CONTRIBUTING.md) |
 | ⚖️ **Licencia** | Términos de uso (CC BY-SA 4.0) | [LICENSE](./LICENSE) |
+
+### 🏛️ **Versiones Constitucionales**
+
+| Versión | Fecha | Tipo | Descripción |
+|---------|-------|------|-------------|
+| **v3.0.0** | 30 Sep 2025 | 🏛️ **ACTUAL** | Reestructuración completa - Sistema de Títulos |
+| v2.0.0 | 27 Ene 2025 | 📚 Histórica | Segunda revisión constitucional |
+| v1.0.0 | 14 Oct 2024 | 📚 Histórica | Primera constitución de Untravel |
 
 ---
 
