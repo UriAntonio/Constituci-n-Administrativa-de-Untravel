@@ -1,0 +1,148 @@
+name: ⚡ Reforma Urgente
+description: Para situaciones que requieren tratamiento inmediato
+title: '[URGENTE] '
+labels: ['urgente', 'reforma-constitucional']
+assignees: 
+  - Huey-Tlatoani
+  - Secretario-Congreso
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## ⚡ REFORMA CONSTITUCIONAL URGENTE
+        
+        > **⚠️ ADVERTENCIA:** Solo usar para situaciones que requieren atención inmediata y no pueden esperar el proceso legislativo normal.
+        
+        **Estado:** � PROCESO DE EMERGENCIA  
+        **Autorización requerida:** 👑 HUEY TLATOANI
+        
+  - type: dropdown
+    id: tipo-emergencia
+    attributes:
+      label: 🚨 Tipo de Emergencia
+      description: Clasificación de la situación crítica
+      options:
+        - Técnica - Fallo del sistema o infraestructura
+        - Operacional - Problema en procesos críticos
+        - Seguridad - Amenaza a la seguridad de la comunidad
+        - Legal - Conflicto jurídico urgente
+        - Constitucional - Crisis del marco legal
+    validations:
+      required: true
+      
+  - type: textarea
+    id: impacto-critico
+    attributes:
+      label: 💥 Impacto si No se Resuelve
+      description: Consecuencias críticas de no actuar inmediatamente
+      placeholder: "Describe las consecuencias graves que ocurrirían sin acción inmediata..."
+    validations:
+      required: true
+      
+  - type: input
+    id: tiempo-limite
+    attributes:
+      label: ⏰ Tiempo Límite
+      description: Cuándo debe estar resuelto (máximo)
+      placeholder: "Ej: 24 horas, 48 horas, fin de semana"
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: solicitado-por
+    attributes:
+      label: 👑 Solicitado por
+      description: Quién solicita la declaración de emergencia
+      options:
+        - Huey Tlatoani
+        - Suprema Corte
+        - Mayoría del Alto Congreso
+        - Comisión de Crisis
+    validations:
+      required: true
+      
+  - type: textarea
+    id: situacion-critica
+    attributes:
+      label: 🔥 Situación Crítica Actual
+      description: Descripción detallada de la situación problemática
+      placeholder: "Explica específicamente cuál es la crisis actual..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: solucion-urgente
+    attributes:
+      label: 🚀 Solución Urgente Propuesta
+      description: Reforma específica requerida para resolver la crisis
+      placeholder: "Texto exacto de la reforma o acción constitucional necesaria..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: articulos-afectados
+    attributes:
+      label: 📜 Artículos Afectados
+      description: Disposiciones constitucionales que se modificarían
+      placeholder: "Lista específica de artículos, títulos o disposiciones..."
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: tipo-cambio
+    attributes:
+      label: 📊 Tipo de Cambio
+      description: Impacto del cambio según versionado semántico
+      options:
+        - MAJOR - Cambio estructural profundo de emergencia
+        - MINOR - Modificación importante urgente
+        - PATCH - Corrección crítica inmediata
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: analisis-constitucional
+    attributes:
+      label: ⚖️ Análisis Constitucional Expedito
+      description: Verificación rápida de constitucionalidad
+      options:
+        - label: No viola principios fundamentales (Artículo 4)
+          required: true
+        - label: No afecta artículos irreformables
+          required: true
+        - label: Proporcional a la urgencia declarada
+          required: true
+        - label: Será revisable en proceso normal posterior
+          required: true
+          
+  - type: input
+    id: revision-posterior
+    attributes:
+      label: 🔍 Fecha de Revisión Posterior
+      description: Cuándo se hará la revisión completa post-emergencia
+      placeholder: "Ej: 30 días después, próxima sesión ordinaria"
+    validations:
+      required: true
+      
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ## 📅 Cronograma de Emergencia Automático
+        
+        **Una vez aprobada la emergencia:**
+        
+        - ⚡ **Debate acelerado:** 24-48 horas máximo
+        - 🗳️ **Votación:** Dentro de 72 horas  
+        - 🚀 **Implementación:** Inmediata tras aprobación
+        - 🔍 **Revisión posterior:** Según fecha indicada arriba
+        
+        ## �️ Salvaguardas de Emergencia
+        
+        - ✅ **Revisión obligatoria** en proceso normal
+        - ✅ **Evaluación de efectividad** post-implementación  
+        - ✅ **Posible reversión** si no cumple objetivos
+        - ✅ **Documentación completa** de decisiones tomadas
+        
+        **IMPORTANTE:** Esta reforma será temporal hasta su revisión y normalización en el proceso legislativo ordinario.

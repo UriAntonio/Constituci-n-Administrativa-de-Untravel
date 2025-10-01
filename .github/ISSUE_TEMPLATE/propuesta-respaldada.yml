@@ -1,0 +1,157 @@
+name: 📝 Propuesta Ciudadana con Respaldo
+description: Propuesta de ciudadano con apoyo de legisladores
+title: '[RESPALDADA] '
+labels: ['propuesta-ciudadana', 'respaldo-legislativo']
+assignees: []
+body:
+  - type: markdown
+    attributes:
+      value: |
+        ## 📝 PROPUESTA CIUDADANA CON RESPALDO LEGISLATIVO
+        
+        **Estado inicial:** � PENDIENTE DE RESPALDO FORMAL  
+        **Proceso:** ⚡ SEMI-ACELERADO (5-7 días de debate tras respaldo)
+        
+  - type: input
+    id: ciudadano
+    attributes:
+      label: 👤 Ciudadano Proponente
+      description: Tu usuario de GitHub
+      placeholder: "@tu-usuario"
+    validations:
+      required: true
+      
+  - type: input
+    id: area-interes
+    attributes:
+      label: 🎯 Área de Interés
+      description: Tu especialidad o área de interés
+      placeholder: "Ej: Educación, Economía, Justicia, etc."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: legisladores-respaldo
+    attributes:
+      label: 🏛️ Legisladores que Respaldan
+      description: Lista de legisladores del Alto Congreso que apoyan tu propuesta
+      placeholder: |
+        @legislador1 - Especialidad: Área
+        @legislador2 - Especialidad: Área
+        @legislador3 - Especialidad: Área
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: tipo-propuesta
+    attributes:
+      label: 📋 Tipo de Propuesta
+      description: Clasificación de tu propuesta
+      options:
+        - Reforma constitucional
+        - Nueva ley
+        - Enmienda técnica
+        - Modificación de proceso
+    validations:
+      required: true
+      
+  - type: dropdown
+    id: versionado
+    attributes:
+      label: 📊 Versionado Esperado
+      description: Impacto esperado según versionado semántico
+      options:
+        - MAJOR - Cambio estructural profundo
+        - MINOR - Nueva funcionalidad importante
+        - PATCH - Corrección menor
+    validations:
+      required: true
+      
+  - type: textarea
+    id: situacion-actual
+    attributes:
+      label: 📖 Situación Actual
+      description: Descripción del problema o situación que deseas cambiar
+      placeholder: "Describe claramente cuál es el problema actual..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: propuesta-solucion
+    attributes:
+      label: ✨ Propuesta de Solución
+      description: Tu solución detallada al problema
+      placeholder: "Explica específicamente qué propones cambiar y cómo..."
+    validations:
+      required: true
+      
+  - type: textarea
+    id: justificacion
+    attributes:
+      label: 💡 Justificación
+      description: Por qué es necesario este cambio
+      placeholder: |
+        **Problema identificado:**
+        - Descripción clara del problema
+        
+        **Beneficios esperados:**
+        - Lista de mejoras que traerá
+        
+        **Coherencia constitucional:**
+        - Cómo se alinea con los principios actuales
+    validations:
+      required: true
+      
+  - type: textarea
+    id: impacto
+    attributes:
+      label: 📊 Análisis de Impacto
+      description: Evaluación de consecuencias y afectados
+      placeholder: |
+        **Afectados directos:**
+        - Quiénes se ven impactados
+        
+        **Cambios operacionales:**
+        - Qué procesos cambiarían
+        
+        **Recursos necesarios:**
+        - Qué se necesita para implementar
+    validations:
+      required: true
+      
+  - type: checkboxes
+    id: coherencia-constitucional
+    attributes:
+      label: ⚖️ Coherencia Constitucional
+      description: Verifica la alineación con el marco constitucional
+      options:
+        - label: Alineado con Artículo 4 (Principios y Valores)
+          required: true
+        - label: Compatible con la estructura constitucional actual
+          required: true
+        - label: No contradice artículos irreformables
+          required: true
+          
+  - type: markdown
+    attributes:
+      value: |
+        ---
+        
+        ## 🤝 Instrucciones para Legisladores
+        
+        **Los legisladores que respaldan deben comentar formalmente:**
+        
+        ```markdown
+        🏛️ **RESPALDO LEGISLATIVO FORMAL**
+        
+        Como miembro del Alto Congreso Tlatocan, **respaldo oficialmente** esta propuesta.
+        
+        **Justificación técnica:** [Por qué es viable]
+        **Área de especialidad:** [Tu competencia]
+        **Recomendación:** [Modificaciones sugeridas si las hay]
+        
+        ---
+        @usuario-proponente tiene mi autorización para proceder con el proceso semi-acelerado.
+        ```
+        
+        **Una vez obtenido el respaldo formal, la propuesta seguirá el proceso semi-acelerado de 5-7 días.**

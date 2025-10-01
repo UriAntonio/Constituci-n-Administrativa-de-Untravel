@@ -1,11 +1,17 @@
-blank_issues_enabled: true
+blank_issues_enabled: false
 contact_links:
+  - name: 📞 Soporte Legislativo
+    url: https://discord.gg/untravel-legislativo
+    about: Canal de Discord para soporte técnico legislativo 24/7
   - name: 💬 Discusión General
     url: https://github.com/UriAntonio/Constituci-n-Administrativa-de-Untravel/discussions
     about: Para conversaciones que no requieren acción específica
-  - name: 📖 Guía de Contribución
-    url: https://github.com/UriAntonio/Constituci-n-Administrativa-de-Untravel/blob/main/CONTRIBUTING.md
-    about: Lee cómo contribuir antes de crear una propuesta
+  - name: 📖 Guía Técnica Legislativa
+    url: https://github.com/UriAntonio/Constituci-n-Administrativa-de-Untravel/blob/main/Legislativo/GUIA_TECNICA_LEGISLATIVA.md
+    about: Manual completo para legisladores y procesos técnicos
   - name: 📜 Constitución Completa
     url: https://github.com/UriAntonio/Constituci-n-Administrativa-de-Untravel/blob/main/CONSTITUTION.md
-    about: Lee el texto completo de la Constitución
+    about: Lee el texto completo de la Constitución v3.0.0
+  - name: ⚖️ Consulta Constitucional
+    url: https://github.com/UriAntonio/Constituci-n-Administrativa-de-Untravel/discussions
+    about: Para consultas sobre interpretación constitucional
