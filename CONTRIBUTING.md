@@ -1,6 +1,9 @@
-# Guía de Contribución - Constitución Administrativa de Untravel
+# Guía de Contribución - Constitución de la Unión Untravel
 
-¡Gracias por tu interés en contribuir a la Constitución de la Unión Untravel! Este documento es un contrato social vivo que puede mejorar con la participación de toda la comunidad.
+**Versión:** 3.0.0 - Actualizada para la Tercera Revisión Constitucional  
+**Última actualización:** 1 de octubre de 2025
+
+¡Gracias por tu interés en contribuir a la Constitución de la Unión Untravel! Este documento es un contrato social vivo que puede mejorar con la participación de toda la comunidad según el **Artículo 35** de la Constitución vigente.
 
 ## 📋 Tabla de Contenidos
 
@@ -52,13 +55,13 @@ Para sugerir mejoras sin cambiar la estructura fundamental:
 
 ### 🏛️ Proponer Reformas Constitucionales
 
-Para cambios significativos a la estructura o principios:
+Para cambios significativos a la estructura o principios según el **Artículo 35** de la Constitución:
 
-1. **Revisa los requisitos**: Asegúrate de cumplir los criterios del Artículo 19
+1. **Revisa los requisitos**: Cualquier miembro de la comunidad puede proponer reformas
 2. **Crea un Issue**: Usa la plantilla "Propuesta de Reforma Constitucional"
-3. **Debate público**: Participa activamente en la discusión (mínimo 7 días)
+3. **Debate público**: Participa activamente en la discusión (mínimo 3 días según **Artículo 16**)
 4. **Crea un Pull Request**: Una vez haya consenso preliminar
-5. **Proceso legislativo**: Sigue el procedimiento oficial del Artículo 20
+5. **Proceso legislativo**: Sigue el procedimiento oficial del **Artículo 35** y **Artículo 16**
 
 ### 📚 Mejorar Documentación
 
@@ -73,97 +76,113 @@ También puedes contribuir mejorando:
 
 ## Proceso de Reforma Constitucional
 
-El proceso formal para reformar la Constitución sigue estos pasos:
+El proceso formal para reformar la Constitución sigue el **Artículo 35** y **Artículo 16** de la Constitución vigente:
 
-### Fase 1: Iniciativa (Semana 1)
+### Fase 1: Iniciativa (Artículo 35)
 
-**Requisitos previos:**
-- Ser miembro activo de la comunidad
-- Cumplir uno de los criterios del Artículo 19:
-  - 1/3 del Legislativo
-  - Poder Ejecutivo
-  - 20% de firmas de la comunidad activa
-  - Recomendación del Tribunal Supremo
+**Requisitos previos según la Constitución actual:**
+- **Cualquier miembro de la comunidad** puede proponer reformas a la Constitución
+- Las reformas deben ser presentadas **por escrito al Alto Congreso Tlatocan**
+- No hay restricciones de antigüedad o apoyo previo (más democrático que versiones anteriores)
 
 **Acciones:**
 1. Crea un **Issue** con etiqueta `reforma-constitucional`
 2. Usa la plantilla de reforma constitucional
 3. Incluye:
-   - **Título claro**: Ej. "Reforma: Ampliar mandato presidencial a 4 meses"
-   - **Artículos afectados**: Lista de artículos a modificar
+   - **Título claro**: Ej. "Reforma: Ampliar mandato del Huey Tlatoani"
+   - **Títulos/Artículos afectados**: Lista de disposiciones a modificar (ej: "Artículo 12: Elección y Mandato")
    - **Texto propuesto**: Redacción exacta de los cambios
    - **Justificación**: Por qué es necesaria esta reforma
    - **Impacto**: A quién y cómo afecta
-   - **Versionado**: ¿Es MAJOR, MINOR o PATCH?
+   - **Tipo de cambio**: ¿Es MAJOR, MINOR o PATCH según versionado semántico?
 
-### Fase 2: Debate Público (7-14 días)
+### Fase 2: Debate Público (Mínimo 3 días - Artículo 16)
 
-**Discusión abierta:**
-- Todos los miembros pueden comentar en el Issue
+**Discusión abierta según Artículo 16:**
+- Todos los miembros pueden comentar en el Issue durante el **debate público**
+- **Mínimo 3 días** para discusión comunitaria (según proceso legislativo)
 - Se busca construir consenso y mejorar la propuesta
 - El autor debe responder dudas y considerar sugerencias
 - Pueden hacerse ajustes a la propuesta basados en feedback
 
 **Indicadores de viabilidad:**
-- ✅ Apoyo significativo de la comunidad
-- ✅ Coherencia con principios fundamentales
+- ✅ Apoyo de la comunidad durante el debate
+- ✅ Coherencia con los **Valores y Principios Rectores** (**Artículo 4**)
+- ✅ Respeto a la **Supremacía Constitucional** (**Artículo 37**)
+- ✅ No contradice principios fundamentales del **Título I**
 - ✅ Factibilidad de implementación
-- ✅ No contradice artículos irreformables (Art. 21)
 
 ### Fase 3: Formalización (Pull Request)
 
-**Una vez haya suficiente apoyo:**
+**Una vez completado el debate público:**
 
 1. **Fork del repositorio** (si no tienes acceso directo)
-2. **Crea una rama** descriptiva: `reforma/ampliar-mandato-presidencial`
+2. **Crea una rama** descriptiva: `reforma/ampliar-mandato-huey-tlatoani`
 3. **Realiza los cambios**:
-   - Modifica CONSTITUTION.md con los cambios exactos
-   - Actualiza CHANGELOG.md con la nueva versión y descripción
-   - Si es necesario, actualiza README.md
+   - Modifica `CONSTITUTION.md` con los cambios exactos en los artículos correspondientes
+   - Actualiza `CHANGELOG.md` con la nueva versión y descripción detallada
+   - Si hay cambios MAJOR, actualiza `versions/` con nueva versión histórica
+   - Si es necesario, actualiza `README.md`
    - Incrementa la versión según versionado semántico
 4. **Crea el Pull Request**:
    - Usa la plantilla de PR para reformas
    - Enlaza al Issue de discusión
    - Marca como "Draft" si aún hay debate activo
 
-### Fase 4: Revisión Legislativa
+### Fase 4: Revisión Legislativa (Artículo 16)
 
-**Comisión Constitucional:**
+**Comisión Especializada del Alto Congreso Tlatocan:**
+- **Revisión técnica por comisión especializada** según el proceso legislativo
 - Revisa compatibilidad con la Constitución existente
 - Verifica que el texto sea claro y sin ambigüedades
-- Evalúa el impacto en otros artículos
+- Evalúa el impacto en otros artículos del sistema de Títulos
 - Puede solicitar cambios o aclaraciones
+
+**Primera Lectura:**
+- **Presentación en sesión plenaria** del Alto Congreso Tlatocan
+- Discusión formal entre legisladores
 
 **Recomendaciones:**
 - ✅ Aprobar para votación
 - ⚠️ Aprobar con modificaciones
-- ❌ Rechazar con justificación
+- ❌ Rechazar con justificación fundamentada
 
-### Fase 5: Votación
+### Fase 5: Votación (Artículos 15 y 35)
 
-**Primera Votación Legislativa:**
-- Requiere 2/3 de votos a favor del Legislativo
-- Si no pasa, vuelve a debate o se archiva
-- Si pasa, continúa el proceso
+**Votación en el Alto Congreso Tlatocan (Artículo 16):**
+- Sigue el **reglamento de votación** establecido en el **Artículo 15**
+- **Quórum mínimo**: Mayoría simple de los miembros
+- **Tiempo de intervención**: 3 minutos máximo por participación
+- **Mayoría requerida**: 
+  - **Mayoría simple** para leyes ordinarias
+  - **2/3** para reformas constitucionales
+- **Proceso**:
+  - Los miembros presentan asistencia 15 minutos antes
+  - El Secretario verifica quórum suficiente
+  - Tiempo límite de 3 minutos para expresar postura en voto
+  - El Secretario da constancia de votos (a favor, en contra, abstenciones)
 
-**Consulta Comunitaria (opcional pero recomendada):**
-- Para reformas MAJOR o que afecten derechos fundamentales
-- Votación abierta a toda la comunidad activa
-- Período de votación: 3-5 días
-- Vinculante si más del 50% de la comunidad vota
-
-**Segunda Votación Legislativa:**
-- Mínimo 3 días después de primera votación
-- Ratificación final por 2/3 del Legislativo
+**Aprobación Final (Artículo 35):**
+- Requiere **mayoría absoluta** del Alto Congreso Tlatocan
+- La **Suprema Corte** revisa la enmienda para asegurar constitucionalidad
 - Si pasa, se procede a promulgación
 
-### Fase 6: Promulgación
+### Fase 6: Promulgación (Artículo 35)
 
-**Acciones finales:**
-1. El Pull Request es aprobado y mergeado
-2. Se crea un **Release** en GitHub con la nueva versión
-3. Se publica anuncio oficial en canales comunitarios
-4. La reforma entra en vigor según lo establecido en ella
+**Publicación oficial:**
+- Las reformas aprobadas serán **publicadas en la Gaceta Oficial de Untravel** (según **Artículo 29**)
+- Los miembros de la comunidad serán **notificados** de cualquier reforma
+- **El Vocero del Alto Congreso** es responsable de la publicación oficial
+
+**Entrada en vigor:**
+- Las reformas **entran en vigor inmediatamente después de su publicación**
+- Las reformas **no afectarán los derechos adquiridos** por los miembros
+
+**Acciones técnicas finales:**
+1. El Pull Request es aprobado y mergeado en GitHub
+2. Se crea un **Release** con la nueva versión (si es MAJOR, se archiva en `/versions`)
+3. Se actualiza el sistema de versiones históricas si aplica
+4. Se publica anuncio oficial en canales comunitarios
 
 ---
 
@@ -179,16 +198,32 @@ Para mantener la consistencia y profesionalismo del documento:
 - ✅ **Género inclusivo**: Usar construcciones neutras cuando sea posible
 - ✅ **Términos consistentes**: Mantener el mismo vocabulario a lo largo del texto
 
-### Estructura de Artículos
+### Estructura Constitucional v3.0.0
+
+La Constitución actual usa un **sistema de Títulos y Capítulos** organizado jerárquicamente:
 
 ```markdown
-### Artículo X: Título Descriptivo
+## TÍTULO X: NOMBRE DEL TÍTULO
+
+### Capítulo Y: Nombre del Capítulo (si aplica)
+
+### Artículo Z: Título Descriptivo
 Texto principal del artículo que establece la norma o principio.
 
-Si es necesario detallar:
-1. Primer punto específico
-2. Segundo punto específico
-3. Tercer punto específico
+**Categoría específica:**
+- Primer punto específico
+- Segundo punto específico  
+- Tercer punto específico
+```
+
+**Ejemplo de la estructura actual:**
+```markdown
+## TÍTULO III: ORGANIZACIÓN DEL PODER PÚBLICO
+
+### Capítulo I: Poder Ejecutivo - Huey Tlatoani
+
+### Artículo 8: Naturaleza y Objetivos
+El Poder Ejecutivo, encabezado por el Huey Tlatoani...
 ```
 
 ### Formato Markdown
@@ -288,7 +323,7 @@ Al recibir feedback:
 ## Preguntas Frecuentes
 
 **¿Puedo proponer una reforma si soy nuevo en la comunidad?**
-Sí, aunque para que sea formalmente considerada necesitas cumplir los requisitos del Artículo 19 (como tener apoyo del 20% de la comunidad).
+Sí, según el **Artículo 35** cualquier miembro de la comunidad puede proponer reformas constitucionales sin restricciones de antigüedad o apoyo previo. Solo debe presentar la propuesta por escrito al Alto Congreso Tlatocan.
 
 **¿Cuánto tiempo toma el proceso completo?**
 Típicamente 2-4 semanas desde la propuesta inicial hasta la promulgación, dependiendo de la complejidad y consenso.
@@ -302,12 +337,47 @@ Sí, en cualquier momento antes de la votación final puedes cerrar el Issue/PR 
 **¿Necesito saber Git para contribuir?**
 No necesariamente. Para propuestas simples, puedes crear Issues sin usar Git. Para cambios técnicos, miembros con experiencia pueden ayudarte.
 
+**¿Cómo funciona el sistema de versiones?**
+Utilizamos **versionado semántico** (MAJOR.MINOR.PATCH):
+- **MAJOR** (ej: v3.0.0): Cambios estructurales profundos, nueva organización constitucional
+- **MINOR** (ej: v3.1.0): Nuevos artículos, títulos o modificaciones importantes
+- **PATCH** (ej: v3.0.1): Correcciones menores, clarificaciones de redacción
+
+**¿Dónde puedo ver versiones anteriores?**
+En la carpeta `/versions/` se archivan todas las versiones MAJOR. Cada archivo histórico incluye la fecha de vigencia y está marcado como "ARCHIVO HISTÓRICO" para evitar confusiones.
+
+---
+
+## Sistema de Versiones
+
+### Archivo Histórico
+
+Todas las versiones MAJOR de la Constitución se archivan en la carpeta `/versions/`:
+- `v1.0.0-CONSTITUTION.txt` - **Constitución original** (2020, documento histórico auténtico)
+- `v2.0.0-CONSTITUTION.md` - Primera versión estructurada en Markdown
+- `v3.0.0-CONSTITUTION.md` - **Versión actual** con sistema de Títulos y Capítulos
+
+### Herramienta de Comparación
+
+Utiliza `compare-versions.sh` para analizar diferencias:
+```bash
+# Ver todas las versiones disponibles
+./versions/compare-versions.sh list
+
+# Comparar dos versiones específicas
+./versions/compare-versions.sh compare v2.0.0 v3.0.0
+
+# Ver estadísticas de una versión
+./versions/compare-versions.sh stats v3.0.0
+```
+
 ---
 
 ## Recursos Adicionales
 
-- [Constitución completa](./CONSTITUTION.md)
-- [Historial de cambios](./CHANGELOG.md)
+- [Constitución completa](./CONSTITUTION.md) - **Versión vigente v3.0.0**
+- [Archivo de versiones](./versions/) - **Historial completo de versiones MAJOR**
+- [Historial de cambios](./CHANGELOG.md) - **Documentación detallada de todas las modificaciones**
 - [Guía de Markdown](https://guides.github.com/features/mastering-markdown/)
 - [Versionado Semántico](https://semver.org/lang/es/)
 - [Guía de GitHub Flow](https://guides.github.com/introduction/flow/)
@@ -322,5 +392,5 @@ Gracias a todos los miembros de la Unión Untravel que contribuyen a mantener y 
 
 ---
 
-*Última actualización: 2024*
+*Última actualización: Enero 2025 - Versión 3.0.0*
 *¿Preguntas? Abre un Issue con la etiqueta `pregunta`*
