@@ -1,0 +1,197 @@
+name: 🗳️ Detección Automática de Votación
+
+on:
+  issue_comment:
+    types: [created]
+
+jobs:
+  detect-voting:
+    name: 🔍 Detectar Votos y Generar Acta
+    runs-on: ubuntu-latest
+    if: |
+      contains(github.event.comment.body, 'voto oficial') ||
+      contains(github.event.comment.body, '✅') ||
+      contains(github.event.comment.body, '❌') ||
+      contains(github.event.comment.body, '🟡') ||
+      contains(github.event.comment.body, 'apruebo') ||
+      contains(github.event.comment.body, 'rechazo') ||
+      contains(github.event.comment.body, 'abstención')
+      
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        
+      - name: Obtener versión dinámica
+        id: get-version
+        run: |
+          if [ -f ".version" ]; then
+            VERSION=$(cat .version)
+          elif [ -f "CHANGELOG.md" ]; then
+            VERSION=$(grep -m 1 "^## \[" CHANGELOG.md | sed 's/## \[\([^]]*\)\].*/\1/')
+          else
+            VERSION="3.0.0"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
+      - name: 🗳️ Procesar voto detectado
+        id: process-vote
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = context.issue.number;
+            const version = "${{ steps.get-version.outputs.version }}";
+            const commentAuthor = context.payload.comment.user.login;
+            const commentBody = context.payload.comment.body;
+            
+            console.log(`🗳️ Voto detectado de @${commentAuthor} en issue #${issueNumber}`);
+            
+            // Verificar si es una propuesta legislativa
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber
+            });
+            
+            const labels = issue.labels.map(l => l.name);
+            const isLegislative = labels.some(label => 
+              ['legislativo', 'respaldo-legislativo', 'urgente', 'reforma-constitucional'].includes(label)
+            );
+            
+            if (!isLegislative) {
+              console.log('⏭️ No es una propuesta legislativa, saltando...');
+              return { skipProcessing: true };
+            }
+            
+            console.log('✅ Es una propuesta legislativa, procesando voto...');
+            
+            // Obtener todos los comentarios para contar votos
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: issueNumber
+            });
+            
+            // Contar votos
+            const votes = { favor: 0, contra: 0, abstenciones: 0 };
+            let lastVoteComment = null;
+            
+            for (const comment of comments) {
+              const body = comment.body.toLowerCase();
+              if (body.includes('voto oficial') || 
+                  body.includes('apruebo') || 
+                  body.includes('rechazo') || 
+                  body.includes('abstención')) {
+                    
+                if (body.includes('✅') || body.includes('apruebo') || body.includes('a favor')) {
+                  votes.favor++;
+                } else if (body.includes('❌') || body.includes('rechazo') || body.includes('en contra')) {
+                  votes.contra++;
+                } else if (body.includes('🟡') || body.includes('abstención')) {
+                  votes.abstenciones++;
+                }
+                lastVoteComment = comment;
+              }
+            }
+            
+            const totalVotos = votes.favor + votes.contra + votes.abstenciones;
+            console.log(`📊 Votos actuales: ${votes.favor} favor, ${votes.contra} contra, ${votes.abstenciones} abstenciones (${totalVotos} total)`);
+            
+            // Confirmar recepción del voto
+            const voteType = commentBody.toLowerCase().includes('✅') || commentBody.toLowerCase().includes('apruebo') ? '✅ A FAVOR' :
+                           commentBody.toLowerCase().includes('❌') || commentBody.toLowerCase().includes('rechazo') ? '❌ EN CONTRA' :
+                           commentBody.toLowerCase().includes('🟡') || commentBody.toLowerCase().includes('abstención') ? '🟡 ABSTENCIÓN' : 
+                           '❓ FORMATO NO RECONOCIDO';
+            
+            const voteConfirmation = `## 🗳️ Voto Registrado Automáticamente
+
+            **Legislador:** @${commentAuthor}  
+            **Voto:** ${voteType}  
+            **Hora:** ${new Date().toLocaleString('es-ES')}  
+            **Sistema:** GitHub Actions v${version}
+
+            ### 📊 Estado Actual de la Votación
+
+            - ✅ **A favor:** ${votes.favor} votos
+            - ❌ **En contra:** ${votes.contra} votos  
+            - 🟡 **Abstenciones:** ${votes.abstenciones} votos
+            - 📊 **Total:** ${totalVotos} votos
+
+            ${totalVotos >= 3 ? '✅ **Quórum alcanzado** (mínimo 3 legisladores)' : '⏳ **Esperando quórum** (faltan ' + (3 - totalVotos) + ' votos)'}
+
+            ${totalVotos >= 5 ? `
+
+            ### 🏛️ Generación Automática de Acta
+
+            Al alcanzar **5 votos** se activará automáticamente el **generador de actas oficial** que:
+            - 📋 Creará el acta oficial como nuevo Issue
+            - 📊 Calculará estadísticas finales
+            - ⚖️ Determinará el resultado según mayorías requeridas
+            - 🔐 Generará certificación criptográfica
+            - 📤 Publicará notificación del resultado
+
+            **🚀 Sin scripts .sh - Completamente automatizado con GitHub Actions**` : ''}
+
+            ---
+            *Voto procesado automáticamente - Sistema sin dependencias externas*
+            `;
+            
+            await github.rest.issues.createComment({
+              issue_number: issueNumber,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: voteConfirmation
+            });
+            
+            // Si hay 5 o más votos, activar generador de acta automáticamente
+            if (totalVotos >= 5) {
+              console.log('🎉 Activando generador de actas automático...');
+              
+              await github.rest.actions.createWorkflowDispatch({
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                workflow_id: 'legislative-tools-replacement.yml',
+                ref: 'main',
+                inputs: {
+                  action: 'generate-acta',
+                  issue_number: issueNumber.toString(),
+                  additional_params: 'auto-generated-after-voting'
+                }
+              });
+              
+              await github.rest.issues.createComment({
+                issue_number: issueNumber,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: `## 🎉 Generación Automática de Acta Activada
+
+            🗳️ **Se han registrado ${totalVotos} votos** - ¡Se ha alcanzado el umbral para generar automáticamente el acta oficial!
+
+            ⚡ **Proceso activado:**
+            - 📋 Generando acta oficial completa
+            - 📊 Calculando estadísticas finales  
+            - ⚖️ Determinando resultado según mayorías
+            - 🔐 Aplicando certificación criptográfica
+
+            ⏱️ **Tiempo estimado:** 1-2 minutos  
+            📊 **Seguir progreso:** [Actions Tab](../../actions)
+
+            🚀 **Sistema GitHub Actions v${version}** - Reemplaza completamente generate-acta.sh
+
+            ---
+            *Activación automática del generador de actas - Sin intervención manual requerida*`
+              });
+            }
+            
+            return { 
+              totalVotos: totalVotos, 
+              voteType: voteType,
+              skipProcessing: false 
+            };
+
+      - name: 📊 Resumen de detección
+        if: steps.process-vote.outputs.skipProcessing != 'true'
+        run: |
+          echo "🗳️ Detección de votación completada"
+          echo "📊 Total votos procesados: ${{ fromJson(steps.process-vote.outputs.result).totalVotos }}"
+          echo "🔄 Tipo de voto: ${{ fromJson(steps.process-vote.outputs.result).voteType }}"
+          echo "✅ Confirmación automática enviada"

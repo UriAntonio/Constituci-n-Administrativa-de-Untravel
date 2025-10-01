@@ -1,0 +1,581 @@
+name: 🔧 Herramientas Legislativas (Reemplazo de Scripts)
+
+on:
+  workflow_dispatch:
+    inputs:
+      action:
+        description: 'Herramienta a ejecutar'
+        required: true
+        type: choice
+        options:
+        - validate-proposal
+        - generate-acta
+        - legislative-support
+      issue_number:
+        description: 'Número del Issue'
+        required: true
+        type: string
+      additional_params:
+        description: 'Parámetros adicionales (opcional)'
+        required: false
+        type: string
+
+jobs:
+  validate-proposal-replacement:
+    name: 🔍 Validar Propuesta (Reemplaza Script)
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'validate-proposal'
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        
+      - name: Obtener versión dinámica
+        id: get-version
+        run: |
+          if [ -f ".version" ]; then
+            VERSION=$(cat .version)
+          elif [ -f "CHANGELOG.md" ]; then
+            VERSION=$(grep -m 1 "^## \[" CHANGELOG.md | sed 's/## \[\([^]]*\)\].*/\1/')
+          else
+            VERSION="3.0.0"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "🏛️ Versión actual: v$VERSION"
+          
+      - name: 🔍 Validación Completa (Sin Scripts)
+        id: validate
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = "${{ github.event.inputs.issue_number }}";
+            const version = "${{ steps.get-version.outputs.version }}";
+            
+            console.log('🔍 Validador de Propuestas Legislativas v' + version);
+            console.log('==================================================');
+            
+            // Obtener información del issue
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: parseInt(issueNumber)
+            });
+            
+            const title = issue.title;
+            const body = issue.body || '';
+            const labels = issue.labels.map(l => l.name);
+            const author = issue.user.login;
+            
+            console.log('📝 Autor: @' + author);
+            console.log('🏷️ Etiquetas: ' + labels.join(', '));
+            console.log('📋 Issue encontrado: ' + title);
+            
+            // SISTEMA DE VALIDACIÓN COMPLETO
+            let validationsPassed = 0;
+            const totalValidations = 8;
+            let validationResults = [];
+            
+            // 1. Validar formato del título
+            if (/^\[(LEGISLATIVO|RESPALDADA|URGENTE)\]/.test(title)) {
+              validationsPassed++;
+              validationResults.push('✅ Formato del título: VÁLIDO');
+            } else {
+              validationResults.push('❌ Formato del título: INVÁLIDO - Debe comenzar con [LEGISLATIVO], [RESPALDADA] o [URGENTE]');
+            }
+            
+            // 2. Validar etiquetas requeridas
+            const hasValidLabels = labels.some(label => 
+              ['legislativo', 'respaldo-legislativo', 'urgente', 'reforma-constitucional'].includes(label)
+            );
+            if (hasValidLabels) {
+              validationsPassed++;
+              validationResults.push('✅ Etiquetas requeridas: VÁLIDO');
+            } else {
+              validationResults.push('❌ Etiquetas requeridas: INVÁLIDO - Falta etiqueta legislativa apropiada');
+            }
+            
+            // 3. Validar estructura del contenido
+            const requiredSections = ['Propuesta', 'Justificación', 'Análisis'];
+            let structureValid = true;
+            for (const section of requiredSections) {
+              if (!body.toLowerCase().includes(section.toLowerCase())) {
+                structureValid = false;
+                break;
+              }
+            }
+            if (structureValid) {
+              validationsPassed++;
+              validationResults.push('✅ Estructura del contenido: VÁLIDO');
+            } else {
+              validationResults.push('❌ Estructura del contenido: INVÁLIDO - Faltan secciones: ' + requiredSections.join(', '));
+            }
+            
+            // 4. Validar tipo de versionado
+            if (/MAJOR|MINOR|PATCH/i.test(body)) {
+              validationsPassed++;
+              validationResults.push('✅ Tipo de versionado: ESPECIFICADO');
+            } else {
+              validationResults.push('❌ Tipo de versionado: NO ESPECIFICADO - Debe incluir MAJOR/MINOR/PATCH');
+            }
+            
+            // 5. Validar justificación constitucional
+            if (/artículo|constitucional|principio/i.test(body)) {
+              validationsPassed++;
+              validationResults.push('✅ Justificación constitucional: PRESENTE');
+            } else {
+              validationResults.push('⚠️ Justificación constitucional: PARCIAL - Recomendado incluir referencias constitucionales');
+            }
+            
+            // 6. Validar checklist de pre-validación
+            const checklistCount = (body.match(/- \[[ x]\]/g) || []).length;
+            if (checklistCount > 3) {
+              validationsPassed++;
+              validationResults.push('✅ Checklist de validación: COMPLETO');
+            } else {
+              validationResults.push('⚠️ Checklist de validación: PARCIAL - Recomendado más elementos en checklist');
+            }
+            
+            // 7. Validar autorización legislativa
+            const isLegislative = labels.includes('legislativo') && /MIEMBRO DEL ALTO CONGRESO/i.test(body);
+            const hasBackup = labels.includes('respaldo-legislativo');
+            if (isLegislative || hasBackup) {
+              validationsPassed++;
+              validationResults.push('✅ Autorización legislativa: VÁLIDA');
+            } else {
+              validationResults.push('⚠️ Autorización legislativa: REVISAR - Verificar autorización del proponente');
+            }
+            
+            // 8. Validar coherencia constitucional
+            if (/Artículo 4|principios|valores/i.test(body)) {
+              validationsPassed++;
+              validationResults.push('✅ Coherencia constitucional: VERIFICADA');
+            } else {
+              validationResults.push('⚠️ Coherencia constitucional: PARCIAL - Verificar alineación con Artículo 4');
+            }
+            
+            // Calcular resultado final
+            const percentage = Math.floor((validationsPassed * 100) / totalValidations);
+            
+            let status, statusIcon;
+            if (validationsPassed === totalValidations) {
+              status = 'COMPLETAMENTE VÁLIDA';
+              statusIcon = '🎉';
+            } else if (validationsPassed >= 6) {
+              status = 'PARCIALMENTE VÁLIDA';
+              statusIcon = '⚠️';
+            } else {
+              status = 'REQUIERE MEJORAS';
+              statusIcon = '❌';
+            }
+            
+            console.log('📊 Validación completada: ' + percentage + '% (' + validationsPassed + '/' + totalValidations + ')');
+            
+            // Crear comentario de validación simple
+            const validationComment = '## 🤖 Validación Automática Completada (GitHub Actions)\n\n' +
+              '**' + statusIcon + ' RESULTADO:** ' + status + ' (' + percentage + '% validaciones pasadas)\n\n' +
+              '### 📋 Detalles de Validación:\n' +
+              validationResults.map(result => '- ' + result).join('\n') + '\n\n' +
+              '### 🚀 Información del Sistema:\n' +
+              '- **Ejecutado por:** GitHub Actions v' + version + '\n' +
+              '- **Fecha:** ' + new Date().toLocaleString('es-ES') + '\n' +
+              '- **Sin scripts locales:** ✅ Completamente automatizado\n' +
+              '- **Historial:** Disponible en Actions tab\n\n' +
+              '### 📊 Estadísticas:\n' +
+              '- **Validaciones pasadas:** ' + validationsPassed + '/' + totalValidations + '\n' +
+              '- **Porcentaje de éxito:** ' + percentage + '%\n' +
+              '- **Estado:** ' + status + '\n\n' +
+              (validationsPassed === totalValidations 
+                ? '### ✅ Próximos Pasos:\n' +
+                  '1. ⏱️ Período de debate público (mínimo según tipo de propuesta)\n' +
+                  '2. 🗳️ Votación del Alto Congreso Tlatocan\n' +
+                  '3. 📋 Implementación técnica tras aprobación'
+                : validationsPassed >= 6
+                ? '### ⚠️ Recomendaciones:\n' +
+                  '- Completar secciones faltantes\n' +
+                  '- Agregar más detalle en justificación\n' +
+                  '- Revisar coherencia constitucional'
+                : '### ❌ Acciones Requeridas:\n' +
+                  '- Corregir formato y estructura\n' +
+                  '- Completar secciones obligatorias\n' +
+                  '- Incluir justificación constitucional\n' +
+                  '- Ver [Guía Técnica](../Legislativo/GUIA_TECNICA_LEGISLATIVA.md)'
+              ) + '\n\n---\n' +
+              '**🏛️ Sistema Legislativo GitHub Actions v' + version + '**\n' +
+              '*Reemplaza completamente los scripts validate-proposal.sh*';
+            
+            // Publicar comentario
+            await github.rest.issues.createComment({
+              issue_number: parseInt(issueNumber),
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: validationComment
+            });
+            
+            console.log('✅ Validación completada y comentario publicado');
+            
+            // Outputs para otros jobs
+            core.setOutput('validation-status', status);
+            core.setOutput('validation-percentage', percentage);
+            core.setOutput('validations-passed', validationsPassed);
+
+  generate-acta-replacement:
+    name: 📋 Generar Acta (Reemplaza Script)
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'generate-acta'
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        
+      - name: Obtener versión dinámica
+        id: get-version
+        run: |
+          if [ -f ".version" ]; then
+            VERSION=$(cat .version)
+          elif [ -f "CHANGELOG.md" ]; then
+            VERSION=$(grep -m 1 "^## \[" CHANGELOG.md | sed 's/## \[\([^]]*\)\].*/\1/')
+          else
+            VERSION="3.0.0"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          
+      - name: 📋 Generación Completa de Acta (Sin Scripts)
+        id: generate-acta
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = "${{ github.event.inputs.issue_number }}";
+            const version = "${{ steps.get-version.outputs.version }}";
+            
+            console.log('📋 Generador de Actas de Votación v' + version);
+            console.log('==============================================');
+            
+            // Obtener información del issue y comentarios
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: parseInt(issueNumber)
+            });
+            
+            const { data: comments } = await github.rest.issues.listComments({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: parseInt(issueNumber)
+            });
+            
+            const title = issue.title;
+            const author = issue.user.login;
+            const createdAt = issue.created_at;
+            const labels = issue.labels.map(l => l.name);
+            
+            console.log('📝 Recopilando votos para: ' + title);
+            
+            // PROCESAR VOTOS
+            const votes = {
+              favor: [],
+              contra: [],
+              abstenciones: []
+            };
+            
+            let votingComments = [];
+            
+            for (const comment of comments) {
+              const body = comment.body.toLowerCase();
+              const commentAuthor = comment.user.login;
+              const commentDate = comment.created_at;
+              
+              if (body.includes('voto oficial') || 
+                  body.includes('apruebo') || 
+                  body.includes('rechazo') || 
+                  body.includes('abstención')) {
+                
+                let voteType = 'desconocido';
+                if (body.includes('✅') || body.includes('apruebo') || body.includes('a favor')) {
+                  votes.favor.push({ author: commentAuthor, date: commentDate });
+                  voteType = 'A FAVOR';
+                } else if (body.includes('❌') || body.includes('rechazo') || body.includes('en contra')) {
+                  votes.contra.push({ author: commentAuthor, date: commentDate });
+                  voteType = 'EN CONTRA';
+                } else if (body.includes('🟡') || body.includes('abstención') || body.includes('abstengo')) {
+                  votes.abstenciones.push({ author: commentAuthor, date: commentDate });
+                  voteType = 'ABSTENCIÓN';
+                }
+                
+                votingComments.push('- @' + commentAuthor + ' (' + voteType + ') - ' + new Date(commentDate).toLocaleString('es-ES'));
+              }
+            }
+            
+            // Calcular estadísticas
+            const totalFavor = votes.favor.length;
+            const totalContra = votes.contra.length;
+            const totalAbstenciones = votes.abstenciones.length;
+            const totalVotos = totalFavor + totalContra + totalAbstenciones;
+            
+            const porcentajeFavor = totalVotos > 0 ? Math.round((totalFavor * 100) / totalVotos) : 0;
+            const porcentajeContra = totalVotos > 0 ? Math.round((totalContra * 100) / totalVotos) : 0;
+            
+            // Determinar resultado según tipo de propuesta
+            const isConstitutional = labels.includes('reforma-constitucional');
+            const mayoriaRequerida = isConstitutional ? Math.ceil(totalVotos * 2 / 3) : Math.ceil(totalVotos / 2);
+            const tipoMayoria = isConstitutional ? '2/3 (Reforma Constitucional)' : 'Simple (Ley Ordinaria)';
+            
+            const resultado = totalFavor >= mayoriaRequerida ? '✅ APROBADA' : '❌ RECHAZADA';
+            
+            console.log('📊 Votos procesados: ' + totalVotos + ' total (' + totalFavor + ' favor, ' + totalContra + ' contra, ' + totalAbstenciones + ' abstenciones)');
+            
+            // Generar hash de verificación
+            const hashContent = title + '-' + issueNumber + '-' + new Date().toISOString();
+            const crypto = require('crypto');
+            const hashVerificacion = crypto.createHash('sha256').update(hashContent).digest('hex').substring(0, 16);
+            
+            // CREAR ACTA OFICIAL simplificada
+            const actaTitle = '[ACTA OFICIAL] Votación #' + issueNumber + ' - ' + title.replace(/^\[(LEGISLATIVO|RESPALDADA|URGENTE)\]\s*/, '');
+            
+            const actaBody = '# 📋 ACTA OFICIAL DE VOTACIÓN\n\n' +
+              '**Alto Congreso Tlatocan - Unión Untravel**\n\n' +
+              '---\n\n' +
+              '## 📊 INFORMACIÓN GENERAL\n\n' +
+              '- **Número de Propuesta:** #' + issueNumber + '\n' +
+              '- **Título:** ' + title + '\n' +
+              '- **Proponente:** @' + author + '\n' +
+              '- **Fecha de Propuesta:** ' + new Date(createdAt).toLocaleDateString('es-ES') + '\n' +
+              '- **Fecha de Votación:** ' + new Date().toLocaleDateString('es-ES') + '\n' +
+              '- **Tipo de Propuesta:** ' + labels.join(', ') + '\n' +
+              '- **Sistema:** GitHub Actions v' + version + '\n' +
+              '- **Secretario Actuante:** Sistema Automatizado\n\n' +
+              '---\n\n' +
+              '## 🗳️ RESULTADO DE LA VOTACIÓN\n\n' +
+              '### ' + resultado + '\n\n' +
+              '### Resumen Estadístico\n\n' +
+              '- ✅ **A FAVOR:** ' + totalFavor + ' votos (' + porcentajeFavor + '%)\n' +
+              '- ❌ **EN CONTRA:** ' + totalContra + ' votos (' + porcentajeContra + '%)\n' +
+              '- 🟡 **ABSTENCIONES:** ' + totalAbstenciones + ' votos (' + Math.round((totalAbstenciones * 100) / (totalVotos || 1)) + '%)\n' +
+              '- **TOTAL:** ' + totalVotos + ' votos (100%)\n\n' +
+              '### Análisis de Quórum y Mayorías\n\n' +
+              '- **Tipo de mayoría requerida:** ' + tipoMayoria + '\n' +
+              '- **Votos necesarios para aprobar:** ' + mayoriaRequerida + '\n' +
+              '- **Votos a favor obtenidos:** ' + totalFavor + '\n' +
+              '- **Estado del quórum:** ' + (totalVotos >= 3 ? '✅ ALCANZADO' : '❌ INSUFICIENTE') + ' (mínimo 3 legisladores)\n\n' +
+              '---\n\n' +
+              '## 🏛️ DECISIÓN OFICIAL\n\n' +
+              '> ### ' + resultado + '\n' +
+              '> \n' +
+              '> ' + (totalFavor >= mayoriaRequerida 
+                ? 'La propuesta ha sido **APROBADA** por el Alto Congreso Tlatocan con ' + totalFavor + ' votos a favor de un total de ' + totalVotos + ' votos emitidos.'
+                : 'La propuesta ha sido **RECHAZADA** por el Alto Congreso Tlatocan. No alcanzó la mayoría requerida de ' + mayoriaRequerida + ' votos.'
+              ) + '\n\n' +
+              '### Base Legal\n' +
+              '- **Artículo 15:** Reglamento de Votación del Alto Congreso Tlatocan\n' +
+              '- **Artículo 16:** Proceso Legislativo\n' +
+              (labels.includes('reforma-constitucional') ? '- **Artículo 35:** Reforma de la Constitución\n' : '') + '\n' +
+              '---\n\n' +
+              '## 📝 REGISTRO DETALLADO DE VOTOS\n\n' +
+              '### Votos Registrados Cronológicamente\n\n' +
+              (votingComments.length > 0 ? votingComments.join('\n') : '⚠️ No se encontraron votos formales registrados en los comentarios del issue.') + '\n\n' +
+              '---\n\n' +
+              '## ✍️ CERTIFICACIÓN AUTOMÁTICA\n\n' +
+              'Este acta ha sido generada automáticamente por el **Sistema GitHub Actions v' + version + '** del Alto Congreso Tlatocan.\n\n' +
+              '**Hash de verificación:** ' + hashVerificacion + '\n' +
+              '**Timestamp:** ' + new Date().toISOString() + '\n' +
+              '**Sin dependencias de scripts:** ✅ Completamente automatizado\n\n' +
+              '---\n\n' +
+              '### 🏛️ Sello Oficial\n\n' +
+              '**Alto Congreso Tlatocan**\n' +
+              '**Unión Untravel**\n' +
+              '**Sistema GitHub Actions v' + version + '**\n\n' +
+              '*"Transparencia, Democracia y Justicia Digital"*\n\n' +
+              '---\n\n' +
+              '*Acta generada automáticamente el ' + new Date().toLocaleDateString('es-ES') + '*\n' +
+              '*Reemplaza completamente generate-acta.sh - Sin scripts externos*\n' +
+              '*Para verificaciones: [GitHub Issue Original #' + issueNumber + '](../../issues/' + issueNumber + ')*';
+            
+            // Crear el issue del acta
+            const { data: actaIssue } = await github.rest.issues.create({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              title: actaTitle,
+              body: actaBody,
+              labels: ['acta-oficial', 'github-actions-generated']
+            });
+            
+            console.log('📋 Acta oficial creada como Issue #' + actaIssue.number);
+            
+            // Comentar en el issue original
+            const resumenComment = '## 📋 Acta Oficial Generada (GitHub Actions)\n\n' +
+              '**' + resultado + '** (' + porcentajeFavor + '% a favor)\n\n' +
+              '**📊 Estadísticas finales:**\n' +
+              '- ✅ Votos a favor: **' + totalFavor + '**\n' +
+              '- ❌ Votos en contra: **' + totalContra + '**\n' +
+              '- 🟡 Abstenciones: **' + totalAbstenciones + '**\n' +
+              '- 📊 Total de votos: **' + totalVotos + '**\n\n' +
+              '**Mayoría requerida:** ' + tipoMayoria + ' (' + mayoriaRequerida + ' votos)\n\n' +
+              '**📄 Acta oficial completa:** #' + actaIssue.number + '\n' +
+              '**🏛️ Sistema:** GitHub Actions v' + version + ' (sin scripts .sh)\n' +
+              '**⏰ Generada:** ' + new Date().toLocaleDateString('es-ES') + '\n\n' +
+              (totalFavor >= mayoriaRequerida 
+                ? '🎉 **¡Propuesta aprobada oficialmente!** Proceder con implementación técnica.'
+                : '📝 **Propuesta no aprobada.** Revisar feedback para mejoras futuras.'
+              ) + '\n\n' +
+              '---\n' +
+              '**🚀 Ventajas del sistema GitHub Actions:**\n' +
+              '- ✅ Sin dependencias de scripts locales\n' +
+              '- ✅ Historial inmutable y auditable\n' +
+              '- ✅ Integración nativa con GitHub\n' +
+              '- ✅ Certificación automática con hash\n\n' +
+              '*Procesado completamente por GitHub Actions - Reemplaza generate-acta.sh*';
+            
+            await github.rest.issues.createComment({
+              issue_number: parseInt(issueNumber),
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: resumenComment
+            });
+            
+            console.log('✅ Acta generada y comentario de resumen publicado');
+            
+            // Outputs
+            core.setOutput('acta-issue', actaIssue.number);
+            core.setOutput('resultado', resultado);
+            core.setOutput('total-votos', totalVotos);
+
+  legislative-support:
+    name: 🏛️ Soporte Legislativo Automatizado
+    runs-on: ubuntu-latest
+    if: github.event.inputs.action == 'legislative-support'
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        
+      - name: Obtener versión dinámica
+        id: get-version
+        run: |
+          if [ -f ".version" ]; then
+            VERSION=$(cat .version)
+          elif [ -f "CHANGELOG.md" ]; then
+            VERSION=$(grep -m 1 "^## \[" CHANGELOG.md | sed 's/## \[\([^]]*\)\].*/\1/')
+          else
+            VERSION="3.0.0"
+          fi
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          
+      - name: 🏛️ Análisis y Soporte Legislativo
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const issueNumber = "${{ github.event.inputs.issue_number }}";
+            const version = "${{ steps.get-version.outputs.version }}";
+            const params = "${{ github.event.inputs.additional_params }}";
+            
+            console.log('🏛️ Sistema de Soporte Legislativo Automatizado');
+            console.log('📋 Analizando issue #' + issueNumber + ' con parámetros: ' + params);
+            
+            // Obtener información del issue
+            const { data: issue } = await github.rest.issues.get({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              issue_number: parseInt(issueNumber)
+            });
+            
+            const title = issue.title;
+            const body = issue.body || '';
+            
+            // Buscar issues relacionados
+            const { data: relatedIssues } = await github.rest.search.issuesAndPullRequests({
+              q: `repo:${context.repo.owner}/${context.repo.repo} is:issue label:legislativo,reforma-constitucional`,
+              sort: 'created',
+              order: 'desc',
+              per_page: 10
+            });
+            
+            // Análisis de tendencias legislativas
+            const legislativeStats = {
+              totalPropuestas: relatedIssues.total_count,
+              propuestasRecientes: relatedIssues.items.length,
+              tiposComunes: {}
+            };
+            
+            relatedIssues.items.forEach(item => {
+              const labels = item.labels.map(l => l.name);
+              labels.forEach(label => {
+                legislativeStats.tiposComunes[label] = (legislativeStats.tiposComunes[label] || 0) + 1;
+              });
+            });
+            
+            // Generar reporte de soporte
+            const supportReport = '## 🏛️ Reporte de Soporte Legislativo Automatizado\n\n' +
+              '**Issue analizado:** #' + issueNumber + ' - ' + title + '\n' +
+              '**Sistema:** GitHub Actions v' + version + '\n' +
+              '**Fecha:** ' + new Date().toLocaleDateString('es-ES') + '\n\n' +
+              '### 📊 Análisis de Contexto Legislativo\n\n' +
+              '**📈 Estadísticas del repositorio:**\n' +
+              '- Total de propuestas legislativas: ' + legislativeStats.totalPropuestas + '\n' +
+              '- Propuestas recientes: ' + legislativeStats.propuestasRecientes + '\n\n' +
+              '**🏷️ Tipos más comunes:**\n' +
+              Object.entries(legislativeStats.tiposComunes)
+                .sort(([,a], [,b]) => b - a)
+                .slice(0, 5)
+                .map(([label, count]) => '- ' + label + ': ' + count + ' casos')
+                .join('\n') + '\n\n' +
+              '### 📚 Propuestas Relacionadas Recientes\n\n' +
+              relatedIssues.items.slice(0, 5).map(item => 
+                '- [#' + item.number + '](' + item.html_url + ') - ' + item.title + ' (' + item.state + ')'
+              ).join('\n') + '\n\n' +
+              '### 🔍 Recomendaciones Automáticas\n\n' +
+              (body.toLowerCase().includes('artículo') 
+                ? '✅ **Referencias constitucionales:** Presentes en la propuesta'
+                : '⚠️ **Recomendación:** Agregar referencias específicas a artículos constitucionales'
+              ) + '\n\n' +
+              (body.toLowerCase().includes('justificación') 
+                ? '✅ **Justificación:** Sección identificada'
+                : '⚠️ **Recomendación:** Expandir la justificación de la propuesta'
+              ) + '\n\n' +
+              '### 🚀 Próximos Pasos Sugeridos\n\n' +
+              '1. **📋 Revisión:** Usar el validador automático de propuestas\n' +
+              '2. **🗳️ Votación:** Coordinar con miembros del Alto Congreso\n' +
+              '3. **📄 Documentación:** Preparar implementación técnica\n\n' +
+              '### 🏛️ Recursos Legislativos\n\n' +
+              '- [📖 Guía Técnica Legislativa](../Legislativo/GUIA_TECNICA_LEGISLATIVA.md)\n' +
+              '- [📋 Plantillas de Issues](.github/ISSUE_TEMPLATE/)\n' +
+              '- [📊 Constitución Actual](../CONSTITUTION.md)\n\n' +
+              '---\n\n' +
+              '**🤖 Análisis generado automáticamente por GitHub Actions v' + version + '**\n' +
+              '*Sistema de soporte legislativo sin dependencias de scripts externos*';
+            
+            // Publicar reporte
+            await github.rest.issues.createComment({
+              issue_number: parseInt(issueNumber),
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: supportReport
+            });
+            
+            console.log('✅ Reporte de soporte legislativo generado y publicado');
+
+  summary:
+    name: 📊 Resumen de Ejecución
+    runs-on: ubuntu-latest
+    needs: [validate-proposal-replacement, generate-acta-replacement, legislative-support]
+    if: always()
+    steps:
+      - name: 📊 Generar resumen de ejecución
+        run: |
+          echo "# 🎉 Herramientas Legislativas GitHub Actions"
+          echo "============================================="
+          echo ""
+          echo "## ✅ Estado de Ejecución:"
+          echo "- 🔍 **Validador:** ${{ needs.validate-proposal-replacement.result }}"
+          echo "- 📋 **Generador de Actas:** ${{ needs.generate-acta-replacement.result }}"  
+          echo "- 🏛️ **Soporte Legislativo:** ${{ needs.legislative-support.result }}"
+          echo ""
+          echo "## 🚀 **SCRIPTS .SH OFICIALMENTE REEMPLAZADOS:**"
+          echo "- ❌ ~~validate-proposal.sh~~ → ✅ GitHub Actions"
+          echo "- ❌ ~~generate-acta.sh~~ → ✅ GitHub Actions"
+          echo "- ➕ **NUEVO:** Soporte legislativo automatizado"
+          echo ""
+          echo "## 🏛️ Beneficios del Sistema GitHub Actions:"
+          echo "- ✅ **Sin dependencias locales** (gh, jq, bash)"
+          echo "- ✅ **Ejecución en la nube** con logs persistentes"
+          echo "- ✅ **Integración nativa** con GitHub Issues y API"
+          echo "- ✅ **Historial auditable** e inmutable"
+          echo "- ✅ **Escalabilidad automática** sin configuración"
+          echo "- ✅ **Certificación criptográfica** automática"
+          echo ""
+          echo "🏛️ **El Alto Congreso Tlatoani ahora opera 100% en GitHub Actions**"

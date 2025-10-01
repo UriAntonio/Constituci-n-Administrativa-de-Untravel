@@ -1,0 +1,170 @@
+name: 🏛️ Validación Legislativa Automática
+
+on:
+  issues:
+    types: [opened, edited, labeled, unlabeled]
+  issue_comment:
+    types: [created, edited]
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  validate-proposal:
+    name: ✅ Validar Propuesta Legislativa
+    runs-on: ubuntu-latest
+    if: github.event_name == 'issues'
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        
+      - name: Obtener versión actual
+        id: version
+        run: |
+          if [ -f "CHANGELOG.md" ]; then
+            VERSION=$(grep -m 1 "^## \[" CHANGELOG.md | sed 's/## \[\([^]]*\)\].*/\1/')
+          else
+            VERSION="3.0.0"
+          fi
+          echo "current=$VERSION" >> $GITHUB_OUTPUT
+          
+      - name: Detectar tipo de propuesta
+        id: detect
+        run: |
+          TITLE="${{ github.event.issue.title }}"
+          
+          if [[ "$TITLE" =~ ^\[LEGISLATIVO\] ]]; then
+            echo "type=legislativa-interna" >> $GITHUB_OUTPUT
+            echo "process=acelerado" >> $GITHUB_OUTPUT
+          elif [[ "$TITLE" =~ ^\[RESPALDADA\] ]]; then
+            echo "type=propuesta-respaldada" >> $GITHUB_OUTPUT
+            echo "process=semi-acelerado" >> $GITHUB_OUTPUT
+          elif [[ "$TITLE" =~ ^\[URGENTE\] ]]; then
+            echo "type=reforma-urgente" >> $GITHUB_OUTPUT
+            echo "process=emergencia" >> $GITHUB_OUTPUT
+          else
+            echo "type=propuesta-ciudadana" >> $GITHUB_OUTPUT
+            echo "process=estándar" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: Validar estructura básica
+        id: validate
+        run: |
+          BODY="${{ github.event.issue.body }}"
+          TITLE="${{ github.event.issue.title }}"
+          
+          SCORE=0
+          
+          # Validar título
+          if [[ "$TITLE" =~ ^\[(LEGISLATIVO|RESPALDADA|URGENTE)\] ]]; then
+            SCORE=$((SCORE + 1))
+          fi
+          
+          # Validar contenido básico
+          if echo "$BODY" | grep -qi "propuesta"; then
+            SCORE=$((SCORE + 1))
+          fi
+          
+          if echo "$BODY" | grep -qi "justificación"; then
+            SCORE=$((SCORE + 1))
+          fi
+          
+          PERCENTAGE=$((SCORE * 100 / 3))
+          
+          echo "score=$SCORE" >> $GITHUB_OUTPUT
+          echo "percentage=$PERCENTAGE" >> $GITHUB_OUTPUT
+          
+          if [ $PERCENTAGE -ge 70 ]; then
+            echo "status=VÁLIDA" >> $GITHUB_OUTPUT
+          else
+            echo "status=REQUIERE_MEJORAS" >> $GITHUB_OUTPUT
+          fi
+          
+      - name: 📝 Procesar con nueva herramienta de validación
+        id: advanced-validation
+        uses: actions/github-script@v7
+        with:
+          script: |
+            // Usar la nueva herramienta de validación completa
+            const owner = context.repo.owner;
+            const repo = context.repo.repo;
+            const issueNumber = context.issue.number;
+            
+            console.log('🔄 Activando validación avanzada con GitHub Actions...');
+            
+            // Triggear el workflow de herramientas legislativas
+            const { data: dispatch } = await github.rest.actions.createWorkflowDispatch({
+              owner: owner,
+              repo: repo,
+              workflow_id: 'legislative-tools-replacement.yml',
+              ref: 'main',
+              inputs: {
+                action: 'validate-proposal',
+                issue_number: issueNumber.toString(),
+                additional_params: 'auto-triggered'
+              }
+            });
+            
+            console.log('✅ Validación avanzada activada');
+            
+            // Comentario de activación
+            const commentBody = `## 🤖 Validación Automática Iniciada (GitHub Actions)
+            
+            **Propuesta:** ${{ steps.issue-info.outputs.title }}
+            **Tipo:** ${{ steps.validate-type.outputs.proposal-type }}
+            **Sistema:** GitHub Actions v${{ steps.get-version.outputs.version }}
+            
+            🔄 **Procesando con herramientas avanzadas...**
+            
+            ✅ Se ha activado el **sistema de validación completo** que reemplaza los scripts .sh
+            
+            📋 **El validador automatizado incluirá:**
+            - Análisis estructural completo
+            - Verificación constitucional 
+            - Estadísticas detalladas
+            - Recomendaciones específicas
+            - Certificación criptográfica
+            
+            ⏱️ **Tiempo estimado:** 2-3 minutos  
+            📊 **Ver progreso:** [Actions Tab](../../actions)
+            
+            ---
+            🏛️ *Sistema GitHub Actions - Sin dependencias de scripts externos*
+            `;
+            
+            await github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: commentBody
+            });
+
+  track-votes:
+    name: 🗳️ Registrar Votos
+    runs-on: ubuntu-latest  
+    if: github.event_name == 'issue_comment' && contains(github.event.comment.body, 'VOTO OFICIAL')
+    steps:
+      - name: Procesar voto
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const comment = context.payload.comment.body;
+            const author = context.payload.comment.user.login;
+            
+            let reaction = 'eyes';
+            if (comment.includes('APRUEBO') || comment.includes('✅')) {
+              reaction = '+1';
+            } else if (comment.includes('RECHAZO') || comment.includes('❌')) {
+              reaction = '-1';
+            } else if (comment.includes('ABSTENCIÓN') || comment.includes('🟡')) {
+              reaction = 'confused';
+            }
+            
+            github.rest.reactions.createForIssueComment({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              comment_id: context.payload.comment.id,
+              content: reaction
+            });
+            
+            console.log(`Voto registrado: ${author} - ${reaction}`);

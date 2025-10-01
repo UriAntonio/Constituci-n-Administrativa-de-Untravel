@@ -1,0 +1,448 @@
+name: 📊 Gestión Automática de Versiones
+
+on:
+  push:
+    branches: [ main ]
+    paths: 
+      - 'CONSTITUTION.md'
+      - 'CHANGELOG.md'
+  workflow_dispatch:
+    inputs:
+      version_type:
+        description: 'Tipo de versión'
+        required: true
+        default: 'patch'
+        type: choice
+        options:
+        - major
+        - minor
+        - patch
+      create_release:
+        description: 'Crear release en GitHub'
+        required: false
+        default: true
+        type: boolean
+
+env:
+  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+jobs:
+  detect-version-change:
+    name: 🔍 Detectar Cambio de Versión
+    runs-on: ubuntu-latest
+    outputs:
+      current-version: ${{ steps.version.outputs.current }}
+      previous-version: ${{ steps.version.outputs.previous }}
+      version-changed: ${{ steps.version.outputs.changed }}
+      change-type: ${{ steps.version.outputs.type }}
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2  # Para comparar con commit anterior
+          
+      - name: Obtener versión actual y anterior
+        id: version
+        run: |
+          # Función para extraer versión del CHANGELOG
+          extract_version() {
+            local file="$1"
+            if [ -f "$file" ]; then
+              grep -m 1 "^## \[" "$file" | sed 's/## \[\([^]]*\)\].*/\1/' | head -1
+            else
+              echo "1.0.0"
+            fi
+          }
+          
+          # Obtener versión actual
+          CURRENT_VERSION=$(extract_version "CHANGELOG.md")
+          echo "current=$CURRENT_VERSION" >> $GITHUB_OUTPUT
+          
+          # Obtener versión anterior del commit previo
+          git checkout HEAD~1 -- CHANGELOG.md 2>/dev/null || echo "No previous version"
+          PREVIOUS_VERSION=$(extract_version "CHANGELOG.md")
+          git checkout HEAD -- CHANGELOG.md
+          
+          echo "previous=$PREVIOUS_VERSION" >> $GITHUB_OUTPUT
+          
+          # Verificar si cambió la versión
+          if [ "$CURRENT_VERSION" != "$PREVIOUS_VERSION" ]; then
+            echo "changed=true" >> $GITHUB_OUTPUT
+            echo "🔄 Cambio de versión detectado: $PREVIOUS_VERSION → $CURRENT_VERSION"
+            
+            # Determinar tipo de cambio
+            IFS='.' read -r curr_major curr_minor curr_patch <<< "$CURRENT_VERSION"
+            IFS='.' read -r prev_major prev_minor prev_patch <<< "$PREVIOUS_VERSION"
+            
+            if [ "$curr_major" != "$prev_major" ]; then
+              echo "type=major" >> $GITHUB_OUTPUT
+            elif [ "$curr_minor" != "$prev_minor" ]; then
+              echo "type=minor" >> $GITHUB_OUTPUT
+            else
+              echo "type=patch" >> $GITHUB_OUTPUT
+            fi
+          else
+            echo "changed=false" >> $GITHUB_OUTPUT
+            echo "type=none" >> $GITHUB_OUTPUT
+          fi
+          
+          echo "📋 Versión actual: $CURRENT_VERSION"
+          echo "📋 Versión anterior: $PREVIOUS_VERSION"
+
+  update-version-references:
+    name: 🔄 Actualizar Referencias de Versión
+    runs-on: ubuntu-latest
+    needs: detect-version-change
+    if: needs.detect-version-change.outputs.version-changed == 'true'
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Obtener versión dinámica
+        id: get-version
+        run: |
+          VERSION="${{ needs.detect-version-change.outputs.current-version }}"
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "🏷️ Versión a usar: $VERSION"
+          
+      - name: Actualizar referencias en documentación
+        run: |
+          VERSION="${{ steps.get-version.outputs.version }}"
+          
+          echo "🔄 Actualizando referencias a v$VERSION..."
+          
+          # Actualizar referencias en archivos de documentación
+          find . -name "*.md" -type f ! -path "./.git/*" ! -path "./versions/*" -exec grep -l "v[0-9]\+\.[0-9]\+\.[0-9]\+" {} \; | while read -r file; do
+            echo "📝 Actualizando $file..."
+            # Reemplazar versiones hardcodeadas con versión actual
+            sed -i "s/Versión [0-9]\+\.[0-9]\+\.[0-9]\+/Versión $VERSION/g" "$file"
+            sed -i "s/v[0-9]\+\.[0-9]\+\.[0-9]\+/v$VERSION/g" "$file"
+            sed -i "s/Constitución v[0-9]\+\.[0-9]\+\.[0-9]\+/Constitución v$VERSION/g" "$file"
+          done
+          
+          # Actualizar scripts con función de versión dinámica
+          find . -name "*.sh" -type f ! -path "./.git/*" -exec grep -l "v[0-9]\+\.[0-9]\+\.[0-9]\+" {} \; | while read -r script; do
+            echo "🔧 Actualizando script $script..."
+            # Agregar función para obtener versión dinámica si no existe
+            if ! grep -q "get_current_version()" "$script"; then
+              # Insertar función después del shebang
+              sed -i '2i\\n# Función para obtener versión actual dinámicamente\nget_current_version() {\n    if [ -f "CHANGELOG.md" ]; then\n        grep -m 1 "^## \\[" CHANGELOG.md | sed '\''s/## \\[\\([^]]*\\)\\].*/\\1/'\''\n    elif [ -f "../CHANGELOG.md" ]; then\n        grep -m 1 "^## \\[" ../CHANGELOG.md | sed '\''s/## \\[\\([^]]*\\)\\].*/\\1/'\''\n    else\n        echo "'$VERSION'"\n    fi\n}\n' "$script"
+            fi
+            
+            # Reemplazar versiones hardcodeadas con llamada a función
+            sed -i 's/v[0-9]\+\.[0-9]\+\.[0-9]\+/v$(get_current_version)/g' "$script"
+          done
+          
+      - name: Actualizar plantillas de GitHub Issues
+        run: |
+          VERSION="${{ steps.get-version.outputs.version }}"
+          
+          echo "🔄 Actualizando plantillas de GitHub Issues..."
+          
+          # Actualizar referencias en plantillas YAML
+          find .github/ISSUE_TEMPLATE/ -name "*.yml" -exec grep -l "v[0-9]\+\.[0-9]\+\.[0-9]\+" {} \; | while read -r template; do
+            echo "📋 Actualizando plantilla $template..."
+            sed -i "s/v[0-9]\+\.[0-9]\+\.[0-9]\+/v$VERSION/g" "$template"
+          done
+          
+      - name: Verificar cambios realizados
+        run: |
+          echo "📊 Resumen de archivos modificados:"
+          git diff --name-only
+          
+          echo "📋 Cambios realizados:"
+          git diff --stat
+          
+      - name: Commit cambios automáticos
+        run: |
+          VERSION="${{ steps.get-version.outputs.version }}"
+          
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          
+          if [ -n "$(git status --porcelain)" ]; then
+            git add .
+            git commit -m "chore: Actualizar referencias de versión a v$VERSION
+
+            🔄 Actualización automática de referencias hardcodeadas
+
+            📝 Cambios realizados:
+            - Referencias de documentación actualizadas a v$VERSION  
+            - Scripts mejorados con función get_current_version()
+            - Plantillas de GitHub Issues actualizadas
+            - Sistema de versionado dinámico implementado
+
+            🤖 Generado automáticamente por GitHub Actions"
+            
+            git push
+            echo "✅ Cambios commitados y pusheados"
+          else
+            echo "ℹ️ No hay cambios para commitear"
+          fi
+
+  archive-major-version:
+    name: 📚 Archivar Versión MAJOR
+    runs-on: ubuntu-latest
+    needs: [detect-version-change, update-version-references]
+    if: needs.detect-version-change.outputs.change-type == 'major'
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Archivar versión anterior en /versions/
+        run: |
+          CURRENT_VERSION="${{ needs.detect-version-change.outputs.current-version }}"
+          PREVIOUS_VERSION="${{ needs.detect-version-change.outputs.previous-version }}"
+          
+          echo "📚 Archivando versión MAJOR anterior: v$PREVIOUS_VERSION"
+          
+          # Crear directorio versions si no existe
+          mkdir -p versions
+          
+          # Crear archivo de versión anterior
+          ARCHIVE_FILE="versions/v$PREVIOUS_VERSION-CONSTITUTION.md"
+          
+          # Obtener contenido de la constitución del commit anterior
+          git checkout HEAD~1 -- CONSTITUTION.md
+          cp CONSTITUTION.md "$ARCHIVE_FILE"
+          git checkout HEAD -- CONSTITUTION.md
+          
+          # Agregar header de archivo histórico
+          cat > temp_header.md << EOF
+          # ARCHIVO HISTÓRICO - Constitución v$PREVIOUS_VERSION
+          
+          > **⚠️ VERSIÓN NO VIGENTE**  
+          > Esta es una versión histórica de la Constitución de la Unión Untravel.  
+          > **Versión vigente actual:** [v$CURRENT_VERSION](../CONSTITUTION.md)  
+          > **Período de vigencia:** Hasta el $(date +"%d de %B de %Y")  
+          > **Archivada automáticamente por:** GitHub Actions
+          
+          ---
+          
+          EOF
+          
+          cat temp_header.md "$ARCHIVE_FILE" > temp_combined.md
+          mv temp_combined.md "$ARCHIVE_FILE"
+          rm temp_header.md
+          
+          # Actualizar herramienta de comparación
+          if [ ! -f "versions/compare-versions.sh" ]; then
+            # Si no existe, crear enlace simbólico o copia
+            ln -sf ../Legislativo/tools/validate-proposal.sh versions/ 2>/dev/null || true
+          fi
+          
+          git add versions/
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git commit -m "archive: Archivar Constitución v$PREVIOUS_VERSION (versión MAJOR)
+
+            📚 Archivo histórico creado automáticamente
+
+            **Versión archivada:** v$PREVIOUS_VERSION  
+            **Nueva versión vigente:** v$CURRENT_VERSION  
+            **Tipo de cambio:** MAJOR (cambio estructural profundo)  
+            **Archivo:** versions/v$PREVIOUS_VERSION-CONSTITUTION.md
+
+            🤖 Archivado automáticamente por GitHub Actions según Artículo 35"
+          
+          git push
+          echo "✅ Versión v$PREVIOUS_VERSION archivada exitosamente"
+
+  create-release:
+    name: 🚀 Crear Release
+    runs-on: ubuntu-latest
+    needs: [detect-version-change, update-version-references]
+    if: needs.detect-version-change.outputs.version-changed == 'true' && (github.event.inputs.create_release == 'true' || github.event.inputs.create_release == '')
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        
+      - name: Generar notas del release
+        id: release-notes
+        run: |
+          VERSION="${{ needs.detect-version-change.outputs.current-version }}"
+          CHANGE_TYPE="${{ needs.detect-version-change.outputs.change-type }}"
+          
+          # Obtener cambios del CHANGELOG
+          CHANGELOG_SECTION=""
+          if [ -f "CHANGELOG.md" ]; then
+            # Extraer sección de la versión actual
+            CHANGELOG_SECTION=$(awk "/^## \[$VERSION\]/{flag=1; next} /^## \[/{flag=0} flag" CHANGELOG.md)
+          fi
+          
+          # Mapear tipo de cambio a descripción
+          case $CHANGE_TYPE in
+            "major")
+              CHANGE_DESCRIPTION="🏗️ **Cambio Estructural Profundo (MAJOR)**"
+              IMPACT="Esta versión introduce cambios significativos en la estructura constitucional."
+              ;;
+            "minor")
+              CHANGE_DESCRIPTION="✨ **Nueva Funcionalidad (MINOR)**"
+              IMPACT="Esta versión agrega nuevas funcionalidades sin romper compatibilidad."
+              ;;
+            "patch")
+              CHANGE_DESCRIPTION="🔧 **Corrección y Mejoras (PATCH)**"
+              IMPACT="Esta versión incluye correcciones menores y clarificaciones."
+              ;;
+          esac
+          
+          # Generar notas completas
+          cat > release_notes.md << EOF
+          # 🏛️ Constitución de la Unión Untravel v$VERSION
+          
+          $CHANGE_DESCRIPTION
+          
+          ## 📋 Resumen
+          $IMPACT
+          
+          ## 📊 Cambios en esta Versión
+          
+          $CHANGELOG_SECTION
+          
+          ## 📚 Documentación
+          - [📜 Constitución Completa](./CONSTITUTION.md)
+          - [📖 Guía de Contribución](./CONTRIBUTING.md)
+          - [🔧 Herramientas Legislativas](./Legislativo/)
+          - [📊 Historial de Cambios](./CHANGELOG.md)
+          
+          ## 🏛️ Proceso Legislativo
+          - **Aprobada por:** Alto Congreso Tlatocan
+          - **Base legal:** Artículos 15, 16 y 35
+          - **Promulgación:** Gaceta Oficial de Untravel
+          - **Entrada en vigor:** Inmediata
+          
+          ## 🔗 Enlaces Útiles
+          - [🏛️ Sistema Legislativo](./Legislativo/README.md)
+          - [📋 Crear Propuesta](./../../issues/new/choose)
+          - [💬 Discusiones](./../../discussions)
+          
+          ---
+          
+          ### 📅 Información del Release
+          **Fecha:** $(date +"%d de %B de %Y")  
+          **Hora:** $(date +"%H:%M UTC")  
+          **Generado por:** GitHub Actions  
+          **Hash:** ${GITHUB_SHA:0:7}
+          
+          *"Transparencia, Democracia y Justicia Digital"* - Artículo 4, Constitución de Untravel
+          EOF
+          
+          echo "📝 Notas del release generadas"
+          
+      - name: Crear Release en GitHub
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: v${{ needs.detect-version-change.outputs.current-version }}
+          release_name: 🏛️ Constitución v${{ needs.detect-version-change.outputs.current-version }}
+          body_path: release_notes.md
+          draft: false
+          prerelease: false
+          
+      - name: Notificar en Issues relacionados
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const version = "${{ needs.detect-version-change.outputs.current-version }}";
+            
+            // Buscar issues cerrados recientemente que podrían estar relacionados
+            const { data: issues } = await github.rest.issues.listForRepo({
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              state: 'closed',
+              labels: 'legislativo,reforma-constitucional',
+              since: new Date(Date.now() - 7 * 24 * 60 * 60 * 1000).toISOString() // Últimos 7 días
+            });
+            
+            const notification = `## 🎉 Constitución v${version} Promulgada
+            
+            La nueva versión de la Constitución ha sido oficialmente promulgada y publicada.
+            
+            **🚀 Release:** [v${version}](../releases/tag/v${version})  
+            **📜 Constitución:** [Versión actual](../CONSTITUTION.md)  
+            **📊 Cambios:** [CHANGELOG.md](../CHANGELOG.md)
+            
+            **Esta propuesta ha sido implementada exitosamente en la nueva versión constitucional.**
+            
+            ¡Gracias por tu contribución al marco democrático de Untravel! 🏛️`;
+            
+            // Comentar en issues relacionados
+            for (const issue of issues.slice(0, 5)) { // Máximo 5 para evitar spam
+              await github.rest.issues.createComment({
+                issue_number: issue.number,
+                owner: context.repo.owner,
+                repo: context.repo.repo,
+                body: notification
+              });
+            }
+
+  generate-statistics:
+    name: 📊 Generar Estadísticas
+    runs-on: ubuntu-latest
+    needs: detect-version-change
+    if: needs.detect-version-change.outputs.version-changed == 'true'
+    steps:
+      - name: Checkout código
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Historia completa para estadísticas
+          
+      - name: Generar estadísticas constitucionales
+        run: |
+          VERSION="${{ needs.detect-version-change.outputs.current-version }}"
+          
+          echo "📊 Generando estadísticas para v$VERSION..."
+          
+          # Crear directorio de estadísticas
+          mkdir -p .github/stats
+          
+          # Contar artículos, títulos, etc.
+          ARTICLES=$(grep -c "^### Artículo" CONSTITUTION.md || echo "0")
+          TITLES=$(grep -c "^## TÍTULO" CONSTITUTION.md || echo "0")
+          WORDS=$(wc -w < CONSTITUTION.md)
+          LINES=$(wc -l < CONSTITUTION.md)
+          
+          # Obtener estadísticas de commits
+          COMMITS_TOTAL=$(git rev-list --count HEAD)
+          COMMITS_THIS_YEAR=$(git rev-list --count --since="2025-01-01" HEAD)
+          
+          # Estadísticas de contribuidores
+          CONTRIBUTORS=$(git log --format='%ae' | sort -u | wc -l)
+          
+          # Generar archivo de estadísticas
+          cat > .github/stats/v${VERSION}.json << EOF
+          {
+            "version": "$VERSION",
+            "generated_at": "$(date -u +"%Y-%m-%dT%H:%M:%SZ")",
+            "constitution": {
+              "articles": $ARTICLES,
+              "titles": $TITLES,
+              "words": $WORDS,
+              "lines": $LINES
+            },
+            "repository": {
+              "total_commits": $COMMITS_TOTAL,
+              "commits_this_year": $COMMITS_THIS_YEAR,
+              "contributors": $CONTRIBUTORS
+            },
+            "legislative_process": {
+              "version_type": "${{ needs.detect-version-change.outputs.change-type }}",
+              "automation_enabled": true,
+              "github_actions": true
+            }
+          }
+          EOF
+          
+          echo "📊 Estadísticas generadas y guardadas en .github/stats/v${VERSION}.json"
+          
+          # Commit estadísticas
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .github/stats/
+          git commit -m "stats: Generar estadísticas para v$VERSION" || echo "No hay cambios en estadísticas"
+          git push || echo "No hay cambios para pushear"
