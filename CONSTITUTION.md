@@ -821,33 +821,6 @@ Todas las resoluciones finales del Poder Judicial y decisiones del Titular del A
 
 ---
 
-## Normas de Incumplimiento
-
-**Definiciones:**
-Para los fines de este artículo, se entenderá por:
-- **Incumplimiento:** Cualquier acción u omisión que vulnere las reglas del servidor, incluyendo pero no limitado a:
-  - Griefing (daño a estructuras ajenas).
-  - Trampas o explotaciones de bugs.
-  - Spam o comportamiento perturbador.
-  - Robo o apropiación indebida.
-
-**Sanciones:**
-Los incumplimientos serán sancionados de acuerdo con la gravedad y naturaleza del hecho:
-- Amonestación vía mensaje privado.
-- Suspensión temporal del acceso al servidor.
-- Ban permanente.
-
-**Procedimiento:**
-El equipo administrativo será responsable de:
-- Investigar denuncias de incumplimiento.
-- Aplicar sanciones de acuerdo con las reglas.
-- Mantener un registro de sanciones.
-
-**Apelaciones:**
-- Los jugadores pueden apelar sanciones ante el equipo administrativo, proporcionando evidencia que justifique la revisión.
-
----
-
 ## Regulación de Eventos y Actividades
 
 **Requisitos para la Organización de Eventos:**
@@ -871,24 +844,6 @@ El equipo administrativo será responsable de:
 **Límites de Gasto y Reserva:**
 - El Titular del Administrativo debe mantener una reserva mínima del 20% del presupuesto anual para gastos imprevistos.
 - El Titular del Administrativo no puede asignar más del 50% del presupuesto anual para eventos comunitarios.
-
----
-
-## Planificación Estratégica
-
-**Objetivos y Misión:**
-Untravel se compromete a planificar y ejecutar estrategias que aseguren su crecimiento y éxito a largo plazo. Nuestra misión es proporcionar un entorno de juego seguro, respetuoso y divertido para nuestros miembros.
-
-**Planificación Anual:**
-La organización creará un plan anual de objetivos y metas, que será revisado y actualizado cada año. El plan anual incluirá:
-- Objetivos estratégicos
-- Metas específicas
-- Indicadores clave de éxito (KPI)
-- Recursos necesarios
-- Cronograma
-
-**Evaluación y Revisión:**
-El plan anual será evaluado y revisado cada 6 meses para asegurar su implementación efectiva. Los resultados serán utilizados para ajustar el plan y mejorar la toma de decisiones.
 
 ---
 
