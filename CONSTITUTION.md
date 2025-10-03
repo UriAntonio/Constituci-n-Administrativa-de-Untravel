@@ -32,18 +32,18 @@ Nosotros, los miembros de la comunidad de la Unión Untravel, con el propósito 
 ### **TÍTULO III: ORGANIZACIÓN DEL PODER PÚBLICO**
 
 #### **Capítulo I: Poder Administrativo - Titular del Administrativo**
-- [Artículo 8: Naturaleza y Objetivos](#capítulo-i-poder-ejecutivo---huey-tlatoani)
+- [Artículo 8: Naturaleza y Objetivos](#capítulo-i-poder-ejecutivo---)
 - [Artículo 9: Responsabilidades](#artículo-9-responsabilidades)
 - [Artículo 10: Atribuciones Específicas](#artículo-10-atribuciones-específicas)
 - [Artículo 11: Limitaciones](#artículo-11-limitaciones)
-- [Artículo 12: Elección y Mandato](#artículo-12-elección-y-mandato)
+- [Artículo 12: Elección y Mandato del Poder Administrativo](#artículo-12-elección-y-mandato-del-poder-administrativo)
 
 #### **Capítulo II: Poder Legislativo - Pleno Legislativo**
-- [Artículo 13: Naturaleza y Composición](#capítulo-ii-poder-legislativo---alto-congreso-tlatocan)
+- [Artículo 13: Naturaleza y Composición](#capítulo-ii-poder-legislativo---)
 - [Artículo 14: Atribuciones](#artículo-14-atribuciones)
 - [Artículo 15: Funcionamiento](#artículo-15-funcionamiento)
 - [Artículo 16: Proceso Legislativo](#artículo-16-proceso-legislativo)
-- [Artículo 17: Elección del Poder Legislativo](#artículo-17-elección-del-poder-legislativo)
+- [Artículo 17: Elección y Mandato del Poder Legislativo](#artículo-17-elección-y-mandato-del-poder-legislativo)
 
 #### **Capítulo III: Poder Judicial**
 - [Artículo 18: Naturaleza y Objetivos](#capítulo-iii-poder-judicial)
@@ -88,11 +88,11 @@ Nosotros, los miembros de la comunidad de la Unión Untravel, con el propósito 
 
 En Untravel todos los jugadores gozarán de los derechos reconocidos en esta Constitución y en los tratados de los que la Unión Untravel sea parte, así como de las garantías para su protección, cuyo ejercicio no podrá restringirse ni suspenderse, a excepción de los casos y bajo las condiciones que esta Constitución establece.
 
-La Unión Untravel es una comunidad gaming democrática y meritocrática organizada bajo el sistema de tres poderes independientes: Administrativo, Legislativo y Judicial, fundamentada en los principios de justicia, mérito, democracia, transparencia y respeto.
+La Unión Untravel es una comunidad gaming democrática y organizada bajo el sistema de tres poderes independientes: Administrativo, Legislativo y Judicial, fundamentada en los principios de justicia, democracia, transparencia y respeto.
 
 Todas las autoridades, en el ámbito de sus competencias, tienen la obligación de promover, respetar, proteger y garantizar los derechos de conformidad con los principios de Untravel, Universalidad, interdependencia, indivisibilidad y progresividad. En consecuencia la Unión deberá prevenir, investigar, sancionar y reparar las violaciones a los derechos Untravel, en los términos que establezca la ley.
 
-Queda prohibida toda clase de discriminación motivada por origen étnico, o nacional, el género, la edad, las discapacidades, la condición social, las condiciones de salud, la religión, las opiniones, las preferencias sexuales, el estado civil, o cualquier otra que atente contra la dignidad de los jugadores y tenga por objeto anular o menospreciar los derechos y libertades de los jugadores.
+Queda prohibida toda clase de discriminación motivada por origen étnico, o nacional, el género, la edad, las discapacidades, la condición social, las condiciones de salud, la religión, las opiniones, las preferencias sexuales, el estado civil, o cualquier otra que atente contra la dignidad de los miembros y tenga por objeto anular o menospreciar los derechos y libertades de los miembros.
 
 ### Artículo 2: Definiciones
 
@@ -108,20 +108,19 @@ Para efectos de esta Constitución, se entenderá por:
 
 **Definiciones Funcionales:**
 - **Legislador:** Miembros del Pleno Legislativo responsables de crear y aprobar leyes y regulaciones que beneficien a la comunidad.
-- **Auditor Meritor:** Funcionario seleccionado de forma democrática para llevar a cabo las auditorías y el registro de los méritos de los miembros de la administración.
 - **Ministro:** [Definición pendiente]
-- **Junta de Coordinación:** Integrado por el Presidente, los titulares de los Ministros y Legisladores así como el Auditor Meritor.
+- **Junta de Coordinación:** Integrado por el o la Titular Administrativo, el o la Titular del Poder Legislativo, el o la Titular del Poder Judicial, los Ministros y Legisladores.
 - **Asamblea:** Integrada por todos los miembros de los organismos, (titular administrativo, miembros judiciales, legisladores y otros). Se unirán para discutir temas importantes, tomar decisiones con respecto a ascensos y evaluar el desempeño de la administración.
 - **Comunidades:** Servidores y grupos de chat o voz relacionados con el servidor Untravel.
 - **Poder Judicial:** Los Administradores del servidor y comunidades, responsables de garantizar el cumplimiento de las normas y resolución de conflictos.
 - **Poder Administrativo:** El Titular del Administrativo, ratificado por la comunidad, responsable de tomar decisiones administrativas.
 - **Poder Legislativo:** El Pleno Legislativo, responsable de crear y modificar las leyes y normas de la comunidad.
 - **Gaceta Oficial:** El registro oficial de las leyes y decisiones tomadas por los poderes públicos.
-- **Derechos Untravel:** Conjuntos de normativas en materia de bienestar que constituyen las garantías de las que gozan los jugadores.
+- **Derechos Untravel:** Conjuntos de normativas en materia de bienestar que constituyen las garantías de las que gozan los miembros.
 
 ### Artículo 3: La Unión Untravel
 
-Untravel es única y está compuesta por múltiples jugadores de diferentes países y culturas por lo que la Unión se compromete a respetar el habla, costumbres y derechos conforme a los principios de Universalidad y Respeto, comprometidos a superar las diferencias y establecerse como un grupo unido. Así como su sistema de gobierno interno no deberá interponer o sobreponer la nacionalidad de los integrantes sobre otros.
+Untravel es única y está compuesta por múltiples miembros de diferentes países y culturas por lo que la Unión se compromete a respetar el habla, costumbres y derechos conforme a los principios de Universalidad y Respeto, comprometidos a superar las diferencias y establecerse como un grupo unido. Así como su sistema de gobierno interno no deberá interponer o sobreponer la nacionalidad de los integrantes sobre otros.
 
 ### Artículo 4: Valores y Principios Rectores
 
@@ -140,7 +139,7 @@ La Unión Untravel se fundamenta en los siguientes valores y principios rectores
 
 ### Artículo 5: Derechos Fundamentales
 
-Todo jugador de la Unión Untravel tiene los siguientes derechos fundamentales:
+Todo miembro de la Unión Untravel tiene los siguientes derechos fundamentales:
 
 **Derechos Civiles:**
 1. La libertad de expresión, siempre y cuando no se utilice para ofender, juzgar o discriminar a otros por su ideología, religión, raza, género, orientación sexual o cualquier otra característica personal.
@@ -187,13 +186,15 @@ El servidor se compromete a proteger la comunidad de cualquier forma de acoso, i
 
 ### Artículo 7: Garantías Procesales
 
-Todo acusado o investigado tiene derecho a:
+En todos los procedimientos administrativos y disciplinarios se garantizará:
 
-1. **Presunción de Inocencia:** Ser considerado inocente hasta demostrar lo contrario.
-2. **Defensa Técnica:** Contar con un defensor si lo solicita.
-3. **Debido Proceso:** Procedimiento justo, imparcial y transparente.
-4. **Doble Instancia:** Derecho a apelar ante tribunal superior.
-5. **Non bis in idem:** No ser juzgado dos veces por el mismo hecho.
+1. **Presunción de inocencia:** Todo miembro será considerado inocente hasta que se compruebe lo contrario
+2. **Debido proceso:** Derecho a ser informado de los cargos y a presentar defensa
+3. **Doble instancia:** Posibilidad de apelar decisiones ante una instancia superior
+4. **Proporcionalidad:** Las sanciones serán proporcionales a la gravedad de la falta
+5. **No retroactividad:** Las normas no se aplicarán retroactivamente
+6. **Derecho a la defensa:** Asistencia y representación durante el proceso
+7. **Publicidad:** Los procedimientos serán transparentes salvo casos justificados
 
 ---
 
@@ -244,7 +245,7 @@ El Poder Administrativo no puede:
 - Violentar los derechos y libertades de los jugadores.
 - Disolver el Pleno Legislativo sin autorización de la Suprema Corte.
 
-### Artículo 12: Elección y Mandato
+### Artículo 12: Elección y Mandato del Poder Administrativo
 
 **Elección:**
 - El Titular del Administrativo será elegido por votación popular entre los Miembros Alfa de Alta Confianza.
@@ -267,10 +268,11 @@ El Poder Administrativo no puede:
 El Pleno Legislativo es el órgano del Poder Legislativo responsable de crear, modificar y derogar las leyes de la Unión. Tiene como objetivo principal representar la voluntad de Untravel y crear normas para el servidor y las comunidades afines.
 
 **Estructura:**
-- **Congresistas:** Hasta 10 miembros electos democráticamente
-- **Presidencia del Pleno Legislativo:** Elegida internamente
+- **Titular del Poder Legislativo:** Elegida o elegido internamente
 - **Secretaría:** Responsable del registro de sesiones
 - **Comisiones:** Especializadas por temas
+- **Cámara Alta:** Hasta 10 Miembros Alfa de Alta Confianza electos.
+- **Cámara Baja:** Hasta 10 miembros electos democráticamente
 
 **Órganos Auxiliares:**
 - **Gaceta Oficial de Untravel:** Registro oficial de leyes y decisiones
@@ -286,12 +288,15 @@ El Poder Legislativo tiene las siguientes atribuciones:
 - Aprobar el presupuesto y gastos públicos.
 - Aprobar designaciones del Administrativo.
 - Reformar esta Constitución según el procedimiento establecido.
+- Crear comisiones especiales para investigar asuntos específicos.
+- Convocar consultas populares y referéndums.
+- Gestionar los permisos y sistemas del uso de suelo y protecciones así como la regulación de la propiedad privada.
 
 ### Artículo 15: Funcionamiento
 
 **Sesiones:**
 - El Pleno Legislativo se reunirá regularmente según calendario establecido para discutir y tomar decisiones así como crear, reformar, modificar o derogar lineamientos y normas conforme a la necesidad de la comunidad.
-- Sesiones extraordinarias pueden ser convocadas por la Presidencia o el Administrativo.
+- Sesiones extraordinarias pueden ser convocadas por el o la Titular del Poder Legislativo o el o la Titular del Poder Administrativo.
 - Quórum mínimo: Mayoría simple de los miembros.
 
 **Procedimientos:**
@@ -303,11 +308,11 @@ El Poder Legislativo tiene las siguientes atribuciones:
 
 El proceso para crear, modificar o derogar leyes seguirá estos pasos:
 
-1. **Iniciativa:** Presentación de propuesta por Issue en GitHub
-2. **Debate Público:** Mínimo 3 días para discusión comunitaria
+1. **Iniciativa:** Presentación de propuesta por Issue en GitHub o miembro del Pleno Legislativo
+2. **Debate Público:** Mínimo 3 días para discusión legislativa
 3. **Comisión:** Revisión técnica por comisión especializada
-4. **Primera Lectura:** Presentación en sesión plenaria
-5. **Votación:** La votación se realizará según el reglamento establecido. El quórum mínimo legal requerido debe ser alcanzado para que la votación sea válida. El Secretario de la sala establecerá un tiempo límite de 3 minutos para que los miembros expresen su postura en forma de voto. El Secretario dará constancia de los votos obtenidos, incluyendo los votos a favor, en contra y las abstenciones. Mayoría simple para leyes ordinarias, 2/3 para reformas constitucionales.
+4. **Primera Lectura:** Presentación en sesión plenaria y al resto de la comunidad
+5. **Votación:** La votación se realizará según el reglamento establecido. El quórum mínimo legal requerido debe ser alcanzado para que la votación sea válida. El Secretario de la sala establecerá un tiempo límite de 3 minutos para que los miembros expresen su postura en forma de voto. El Secretario dará constancia de los votos obtenidos, incluyendo los votos a favor, en contra y las abstenciones. Mayoría simple para leyes ordinarias, 2/3 partes de los votos para reformas constitucionales.
 6. **Promulgación:** El Administrativo promulga o ejerce veto (superable con 2/3 del Legislativo)
 7. **Publicación:** En la Gaceta Oficial para entrada en vigor
 
@@ -317,7 +322,7 @@ El proceso para crear, modificar o derogar leyes seguirá estos pasos:
 - El Vocero oficial será responsable de gestionar y registrar las sesiones.
 - El Vocero de la sala deberá plasmar en la Gaceta Oficial los dictámenes aprobados o rechazados en la sesión.
 
-### Artículo 17: Elección del Poder Legislativo
+### Artículo 17: Elección y Mandato del Poder Legislativo
 
 **Elección:**
 - Por votación popular entre los Miembros Alfa de Alta Confianza.
@@ -404,7 +409,7 @@ Los jueces del Poder Judicial deben:
 
 **Proceso:**
 - Selección por el Poder Administrativo y Legislativo conjuntamente entre los Miembros Alfa de Alta Confianza.
-- Evaluación de méritos y competencias
+- Evaluación de desempeño y competencias
 - Período de prueba de 1 mes
 
 **Mandato:**
@@ -417,23 +422,23 @@ Los jueces del Poder Judicial deben:
 
 ### Artículo 23: Contrapesos para el Poder Administrativo
 
-- El Pleno Legislativo puede iniciar el proceso de destitución al Presidente con una mayoría de 2/3 de los votos.
-- La Suprema Corte puede declarar inconstitucionales las decisiones del Presidente.
-- El Pleno Legislativo puede rechazar los nombramientos del Presidente para cargos públicos.
-- El Presidente no puede disolver el Pleno Legislativo sin autorización de La Suprema Corte.
+- El Pleno Legislativo puede iniciar el proceso de destitución al Titular Administrativo con una mayoría de 2/3 partes de los votos.
+- La Suprema Corte puede declarar inconstitucionales las decisiones del Titular Administrativo.
+- El Pleno Legislativo puede rechazar los nombramientos del Titular Administrativo para cargos públicos.
+- El Titular Administrativo no puede disolver el Pleno Legislativo sin autorización de La Suprema Corte.
 
 ### Artículo 24: Contrapesos para el Poder Legislativo
 
-- El Presidente puede vetar leyes aprobadas por el Pleno Legislativo (superable con 2/3).
+- El Titular Administrativo puede vetar leyes aprobadas por el Pleno Legislativo (superable con 2/3 partes de los votos).
 - La Suprema Corte puede declarar inconstitucionales las leyes aprobadas por el Pleno Legislativo.
-- El Presidente puede convocar sesiones especiales del Pleno Legislativo.
+- El Titular Administrativo puede convocar sesiones especiales del Pleno Legislativo.
 - Los miembros del Pleno Legislativo pueden ser investigados y juzgados por la Suprema Corte.
 
 ### Artículo 25: Contrapesos para el Poder Judicial
 
-- El Pleno Legislativo puede iniciar el proceso de destitución a los jueces de la Suprema Corte con una mayoría de 2/3 de los votos.
-- El Presidente puede nombrar nuevos jueces para reemplazar a los que renuncian o son removidos.
-- El Pleno Legislativo puede aprobar leyes que limiten la jurisdicción de la Suprema Corte.
+- El Pleno Legislativo puede iniciar el proceso de destitución a los jueces de la Suprema Corte con una mayoría de 2/3 partes de los votos.
+- El Titular Administrativo puede nombrar nuevos jueces para reemplazar a los que renuncian o son removidos.
+- El Pleno Legislativo puede aprobar leyes que limiten la jurisdicción de la Suprema Corte dentro del marco constitucional.
 - Los jueces de la Suprema Corte deben ser aprobados por el Pleno Legislativo.
 
 ### Artículo 26: Mecanismos Adicionales
@@ -454,7 +459,7 @@ Los jueces del Poder Judicial deben:
 
 **Composición:**
 - La Suprema Corte estará compuesta por 3-5 miembros elegidos de los Miembros Alfa de Alta Confianza.
-- Los miembros deben ser respetados y experimentados en la comunidad.
+- Los miembros deben haber sido jueces o legisladores, ser respetables y experimentados en la comunidad.
 
 **Proceso de selección:**
 - Los miembros solo podrán ser seleccionados de los Miembros Alfa de Alta Confianza conforme lo establecido en la presente constitución.
@@ -463,11 +468,11 @@ Los jueces del Poder Judicial deben:
 
 ### Artículo 28: Tribunal Disciplinario
 
-**Objetivo:** Mantener la independencia del poder judicial y crear un mecanismo para investigar y sancionar faltas cometidas por miembros del poder judicial.
+**Objetivo:** Mantener la independencia del poder judicial y crear un mecanismo para investigar y sancionar faltas cometidas por miembros de los tres poderes.
 
 **Composición:**
 - El Tribunal Disciplinario estará compuesto por el grupo de propietarios.
-- Los propietarios investigarán y sancionarán las faltas cometidas por miembros del poder judicial.
+- Los propietarios investigarán y sancionarán las faltas cometidas por miembros de alguno de los tres poderes.
 
 ### Artículo 29: La Gaceta Oficial de Untravel
 
@@ -476,7 +481,7 @@ La Gaceta Oficial de Untravel es el órgano oficial de publicación y difusión 
 
 **Estructura y Organización:**
 - La Gaceta Oficial estará bajo la responsabilidad del Vocero del Pleno Legislativo.
-- El Vocero será asistido por un equipo designado por el Alto Pleno Legislativo.
+- El Vocero será asistido por un equipo designado por el Pleno Legislativo.
 
 **Funciones y Responsabilidades:**
 - Publicar las actas y resoluciones del Pleno Legislativo.
@@ -503,7 +508,7 @@ Untravel establece las Fuerzas Armadas del Servidor para proteger y defender los
 
 **Estructura y Organización:**
 El ejército estará compuesto por:
-- Un Comandante en Jefe, nombrado por el Presidente del Servidor.
+- Un Comandante en Jefe, nombrado por el Titular Administrativo del Servidor.
 - Un Estado Mayor, compuesto por [número] de oficiales.
 - Unidades tácticas, compuestas por jugadores voluntarios.
 - El ejército se dividirá en [número] de dependencias:
@@ -537,12 +542,12 @@ Las Fuerzas Armadas del Servidor estarán sujetas a las siguientes limitaciones:
 ### Artículo 31: Sistema Financiero
 
 **Moneda Oficial:**
-- La moneda oficial del servidor es la Travel Coin, sin equivalente económico en el mundo real.
+- La moneda oficial del servidor es la Travel-Coin, sin equivalente económico en el mundo real.
 
 **Ingresos:**
 - Los ingresos se generan mediante:
   - Eliminación de mobs en el servidor de Minecraft.
-  - Donaciones en dinero real de los miembros propietarios (utilizados exclusivamente para el host del servidor).
+  - Donaciones en dinero real de la voluntad de los miembros (utilizados exclusivamente para el host o mejoramiento del servidor).
 
 **Gastos:**
 - Todos los gastos se registran en el registro de fondos del servidor.
@@ -664,7 +669,7 @@ Untravel se compromete a mantener la transparencia en todas sus acciones y decis
   - Informes de actividad
 
 **Informes Regulares:**
-- Informes financieros resumidos del presupuesto asignado al presidente, incluyendo:
+- Informes financieros resumidos del presupuesto asignado al Titular Administrativo, incluyendo:
   - Ingresos totales
   - Gastos generales
   - Balance general
@@ -699,7 +704,7 @@ La constitución es la ley suprema del servidor.
 
 **Aprobación:**
 - Las reformas requieren la aprobación de la mayoría absoluta del Pleno Legislativo.
-- La Suprema Corte revisará la enmienda para asegurarse de que sea constitucional.
+- La Suprema Corte revisará la reforma para asegurarse de que sea constitucional.
 
 **Notificación y Publicación:**
 - Las reformas aprobadas serán publicadas en la Gaceta Oficial de Untravel.
@@ -768,7 +773,7 @@ En caso de vacante en cualquier cargo, se realizará una nueva elección o selec
 
 ### Artículo 37: Supremacía Constitucional
 
-Esta Constitución es la ley suprema de la Unión Untravel. Cualquier norma, decisión o acto que la contradiga es nulo.
+Esta Constitución es la ley suprema de la Unión Untravel. Cualquier ley, norma, decisión o acto que la contradiga es nulo.
 
 ### Artículo 38: Interpretación
 
@@ -894,7 +899,7 @@ Esta Constitución ha sido elaborada y aprobada por la Asamblea Constituyente de
 **Poder Legislativo:**
 
 **KlarixMx**  
-*Legislador Presidente del Poder Legislativo*
+*Legislador Titular del Poder Legislativo*
 
 **DeadLuis2324**  
 *Legislador del Poder Legislativo*
@@ -914,7 +919,7 @@ Esta Constitución ha sido elaborada y aprobada por la Asamblea Constituyente de
 **Poder Administrativo:**
 
 **Lulu81957**  
-*Presidenta del Poder Administrativo*
+*Titular del Poder Administrativo*
 
 ---
 
