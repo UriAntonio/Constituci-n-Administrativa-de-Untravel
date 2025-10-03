@@ -1,18 +1,18 @@
-# Constitución Política de la Unión Untravel
+# Constitución Administrativa de la Unión Untravel
 
 **Versión:** 3.0.0  
 **Primera revisión:** 14 de Octubre de 2024  
 **Segunda revisión:** 27 de Enero de 2025  
-**Tercera revisión:** 30 de septiembre de 2025  
+**Tercera revisión:** 3 de octubre de 2025 - Validación Retroactiva del Pleno Legislativo  
 **Plataforma:** Minecraft Bedrock Edition
 
 ---
 
 ## Preámbulo
 
-**Nosotros, los miembros de la comunidad de la Unión Untravel**, con el propósito sagrado de establecer un gobierno justo y equitativo, garantizar la justicia, la igualdad y la libertad para todos los jugadores de nuestra comunidad en Minecraft Bedrock, y con la firme determinación de construir una sociedad digital próspera basada en los principios de democracia, meritocracia y respeto mutuo, **establecemos solemnemente esta Constitución Política para regir nuestra Unión**.
+Nosotros, los miembros de la comunidad de la Unión Untravel, con el propósito de establecer una administración justa y equitativa, garantizar la justicia, la igualdad y la libertad para todos los miembros de nuestra comunidad en Minecraft Bedrock, y con la firme determinación de construir una sociedad digital próspera basada en los principios de democracia y respeto mutuo, establecemos solemnemente esta Constitución Administrativa para regir nuestra Unión.
 
-Que este documento sea el fundamento inquebrantable de nuestra convivencia, la guía de nuestras acciones y el garante de nuestros derechos y deberes como ciudadanos digitales de Untravel.
+"Diviértete, explora y crea la mayor historia que el mundo jamás haya visto"
 
 ---
 
@@ -31,14 +31,14 @@ Que este documento sea el fundamento inquebrantable de nuestra convivencia, la g
 
 ### **TÍTULO III: ORGANIZACIÓN DEL PODER PÚBLICO**
 
-#### **Capítulo I: Poder Ejecutivo - Huey Tlatoani**
+#### **Capítulo I: Poder Administrativo - Titular del Administrativo**
 - [Artículo 8: Naturaleza y Objetivos](#capítulo-i-poder-ejecutivo---huey-tlatoani)
 - [Artículo 9: Responsabilidades](#artículo-9-responsabilidades)
 - [Artículo 10: Atribuciones Específicas](#artículo-10-atribuciones-específicas)
 - [Artículo 11: Limitaciones](#artículo-11-limitaciones)
 - [Artículo 12: Elección y Mandato](#artículo-12-elección-y-mandato)
 
-#### **Capítulo II: Poder Legislativo - Alto Congreso Tlatocan**
+#### **Capítulo II: Poder Legislativo - Pleno Legislativo**
 - [Artículo 13: Naturaleza y Composición](#capítulo-ii-poder-legislativo---alto-congreso-tlatocan)
 - [Artículo 14: Atribuciones](#artículo-14-atribuciones)
 - [Artículo 15: Funcionamiento](#artículo-15-funcionamiento)
@@ -53,7 +53,7 @@ Que este documento sea el fundamento inquebrantable de nuestra convivencia, la g
 - [Artículo 22: Selección de Jueces](#artículo-22-selección-de-jueces)
 
 ### **TÍTULO IV: SISTEMA DE CONTRAPESOS Y EQUILIBRIOS**
-- [Artículo 23: Contrapesos para el Poder Ejecutivo](#título-iv-sistema-de-contrapesos-y-equilibrios)
+- [Artículo 23: Contrapesos para el Poder Administrativo](#título-iv-sistema-de-contrapesos-y-equilibrios)
 - [Artículo 24: Contrapesos para el Poder Legislativo](#artículo-24-contrapesos-para-el-poder-legislativo)
 - [Artículo 25: Contrapesos para el Poder Judicial](#artículo-25-contrapesos-para-el-poder-judicial)
 - [Artículo 26: Mecanismos Adicionales](#artículo-26-mecanismos-adicionales)
@@ -88,7 +88,7 @@ Que este documento sea el fundamento inquebrantable de nuestra convivencia, la g
 
 En Untravel todos los jugadores gozarán de los derechos reconocidos en esta Constitución y en los tratados de los que la Unión Untravel sea parte, así como de las garantías para su protección, cuyo ejercicio no podrá restringirse ni suspenderse, a excepción de los casos y bajo las condiciones que esta Constitución establece.
 
-La Unión Untravel es una comunidad gaming democrática y meritocrática organizada bajo el sistema de tres poderes independientes: Ejecutivo, Legislativo y Judicial, fundamentada en los principios de justicia, mérito, democracia, transparencia y respeto.
+La Unión Untravel es una comunidad gaming democrática y meritocrática organizada bajo el sistema de tres poderes independientes: Administrativo, Legislativo y Judicial, fundamentada en los principios de justicia, mérito, democracia, transparencia y respeto.
 
 Todas las autoridades, en el ámbito de sus competencias, tienen la obligación de promover, respetar, proteger y garantizar los derechos de conformidad con los principios de Untravel, Universalidad, interdependencia, indivisibilidad y progresividad. En consecuencia la Unión deberá prevenir, investigar, sancionar y reparar las violaciones a los derechos Untravel, en los términos que establezca la ley.
 
@@ -101,21 +101,21 @@ Para efectos de esta Constitución, se entenderá por:
 **Definiciones Orgánicas:**
 - **Servidor:** El Servidor en Minecraft Untravel y sus infraestructuras asociadas.
 - **Jugador:** Cualquier persona que se conecte y juegue en el servidor y comunidades afines sin distinción de género o sexo.
-- **Gobierno:** El sistema administrativo basado en Meritocracia establecido en esta constitución política.
-- **Huey Tlatoani:** El titular del Poder Ejecutivo, líder de la Meritocracia y representante máximo de la comunidad.
-- **Alto Congreso Tlatocan:** El órgano del Poder Legislativo encargado de crear y modificar las leyes y normas de la comunidad.
+- **Gobierno:** El sistema administrativo democrático establecido en esta constitución administrativa.
+- **Titular del Administrativo:** El titular del Poder Administrativo y representante máximo de la comunidad.
+- **Pleno Legislativo:** El órgano del Poder Legislativo encargado de crear y modificar las leyes y normas de la comunidad.
 - **Unión:** El conjunto de poderes y grupos así como facciones y clanes que estén afiliados a Untravel o que sean parte de la comunidad y que tengan poder administrativo.
 
 **Definiciones Funcionales:**
-- **Legislador:** Miembros del Alto Congreso Tlatocan responsables de crear y aprobar leyes y regulaciones que beneficien a la comunidad.
+- **Legislador:** Miembros del Pleno Legislativo responsables de crear y aprobar leyes y regulaciones que beneficien a la comunidad.
 - **Auditor Meritor:** Funcionario seleccionado de forma democrática para llevar a cabo las auditorías y el registro de los méritos de los miembros de la administración.
 - **Ministro:** [Definición pendiente]
 - **Junta de Coordinación:** Integrado por el Presidente, los titulares de los Ministros y Legisladores así como el Auditor Meritor.
-- **Asamblea:** Integrada por todos los miembros de los organismos, (presidente, ministros, legisladores y otros). Se unirán para discutir temas importantes, tomar decisiones con respecto a ascensos y evaluar el desempeño de la meritocracia.
+- **Asamblea:** Integrada por todos los miembros de los organismos, (titular administrativo, miembros judiciales, legisladores y otros). Se unirán para discutir temas importantes, tomar decisiones con respecto a ascensos y evaluar el desempeño de la administración.
 - **Comunidades:** Servidores y grupos de chat o voz relacionados con el servidor Untravel.
 - **Poder Judicial:** Los Administradores del servidor y comunidades, responsables de garantizar el cumplimiento de las normas y resolución de conflictos.
-- **Poder Ejecutivo:** El Huey Tlatoani, ratificado por la comunidad, responsable de tomar decisiones ejecutivas.
-- **Poder Legislativo:** El Alto Congreso Tlatocan, responsable de crear y modificar las leyes y normas de la comunidad.
+- **Poder Administrativo:** El Titular del Administrativo, ratificado por la comunidad, responsable de tomar decisiones administrativas.
+- **Poder Legislativo:** El Pleno Legislativo, responsable de crear y modificar las leyes y normas de la comunidad.
 - **Gaceta Oficial:** El registro oficial de las leyes y decisiones tomadas por los poderes públicos.
 - **Derechos Untravel:** Conjuntos de normativas en materia de bienestar que constituyen las garantías de las que gozan los jugadores.
 
@@ -128,12 +128,11 @@ Untravel es única y está compuesta por múltiples jugadores de diferentes paí
 La Unión Untravel se fundamenta en los siguientes valores y principios rectores:
 
 1. **Justicia:** Trato equitativo para todos los miembros
-2. **Mérito:** Reconocimiento basado en contribuciones y esfuerzo
-3. **Democracia:** Participación activa en la toma de decisiones
-4. **Transparencia:** Apertura en todos los procesos administrativos
-5. **Respeto:** Convivencia armoniosa y tolerante
-6. **Universalidad:** Igualdad sin distinción de origen, cultura o condición
-7. **Progresividad:** Mejora continua del bienestar comunitario
+2. **Democracia:** Participación activa en la toma de decisiones
+3. **Transparencia:** Apertura en todos los procesos administrativos
+4. **Respeto:** Convivencia armoniosa y tolerante
+5. **Universalidad:** Igualdad sin distinción de origen, cultura o condición
+6. **Progresividad:** Mejora continua del bienestar comunitario
 
 ---
 
@@ -200,11 +199,11 @@ Todo acusado o investigado tiene derecho a:
 
 ## TÍTULO III: ORGANIZACIÓN DEL PODER PÚBLICO
 
-### Capítulo I: Poder Ejecutivo - Huey Tlatoani
+### Capítulo I: Poder Administrativo - Titular del Administrativo
 
 ### Artículo 8: Naturaleza y Objetivos
 
-El Poder Ejecutivo, encabezado por el Huey Tlatoani, es responsable de la administración y gestión diaria de la Unión Untravel. Tiene como objetivos principales:
+El Poder Administrativo, encabezado por el Titular del Administrativo, es responsable de la administración y gestión diaria de la Unión Untravel. Tiene como objetivos principales:
 
 1. Garantizar la estabilidad, seguridad y crecimiento del servidor.
 2. Trabajar en estrecha colaboración con el Poder Legislativo y Judicial.
@@ -213,7 +212,7 @@ El Poder Ejecutivo, encabezado por el Huey Tlatoani, es responsable de la admini
 
 ### Artículo 9: Responsabilidades
 
-El Poder Ejecutivo es responsable de:
+El Poder Administrativo es responsable de:
 
 - **Implementación y Cumplimiento:** Implementar y hacer cumplir las leyes y reglas del servidor.
 - **Mejoras y Cambios:** Proponer mejoras y cambios al servidor.
@@ -228,7 +227,7 @@ El Poder Ejecutivo es responsable de:
 
 ### Artículo 10: Atribuciones Específicas
 
-El Huey Tlatoani tiene las siguientes atribuciones específicas:
+El Titular del Administrativo tiene las siguientes atribuciones específicas:
 
 1. **Gestión de Recursos:** Administrar y gestionar los recursos del servidor de manera eficiente.
 2. **Desarrollo de Proyectos:** Planificar y ejecutar proyectos de construcción y desarrollo en el servidor. Coordinar con la comunidad para involucrarlos en los proyectos.
@@ -240,16 +239,16 @@ El Huey Tlatoani tiene las siguientes atribuciones específicas:
 
 ### Artículo 11: Limitaciones
 
-El Poder Ejecutivo no puede:
+El Poder Administrativo no puede:
 - Actuar en contra de la constitución y las leyes del servidor.
 - Violentar los derechos y libertades de los jugadores.
-- Disolver el Congreso Tlatocan sin autorización de la Suprema Corte.
+- Disolver el Pleno Legislativo sin autorización de la Suprema Corte.
 
 ### Artículo 12: Elección y Mandato
 
 **Elección:**
-- El Huey Tlatoani será elegido por votación popular entre los miembros del grupo Alfa.
-- Solo los miembros del grupo Alfa podrán postularse para el cargo.
+- El Titular del Administrativo será elegido por votación popular entre los Miembros Alfa de Alta Confianza.
+- Solo los Miembros Alfa de Alta Confianza podrán postularse para el cargo.
 - El candidato ganador será el que obtenga la mayoría simple de votos válidos.
 - Será ratificado por la comunidad cada media temporada (un año).
 
@@ -258,18 +257,18 @@ El Poder Ejecutivo no puede:
 - Reelección: Permitida una vez consecutiva.
 
 **Rendición de Cuentas:**
-- Debe rendir cuentas ante el Congreso y el Poder Judicial sobre sus acciones y decisiones.
+- Debe rendir cuentas ante el Pleno Legislativo y el Poder Judicial sobre sus acciones y decisiones.
 - Informar regularmente sobre su trabajo y logros.
 
-### Capítulo II: Poder Legislativo - Alto Congreso Tlatocan
+### Capítulo II: Poder Legislativo - Pleno Legislativo
 
 ### Artículo 13: Naturaleza y Composición
 
-El Alto Congreso Tlatocan es el órgano del Poder Legislativo responsable de crear, modificar y derogar las leyes de la Unión. Tiene como objetivo principal representar la voluntad de Untravel y crear normas para el servidor y las comunidades afines.
+El Pleno Legislativo es el órgano del Poder Legislativo responsable de crear, modificar y derogar las leyes de la Unión. Tiene como objetivo principal representar la voluntad de Untravel y crear normas para el servidor y las comunidades afines.
 
 **Estructura:**
 - **Congresistas:** Hasta 10 miembros electos democráticamente
-- **Presidencia del Congreso:** Elegida internamente
+- **Presidencia del Pleno Legislativo:** Elegida internamente
 - **Secretaría:** Responsable del registro de sesiones
 - **Comisiones:** Especializadas por temas
 
@@ -281,18 +280,18 @@ El Alto Congreso Tlatocan es el órgano del Poder Legislativo responsable de cre
 
 El Poder Legislativo tiene las siguientes atribuciones:
 - Crear y modificar leyes para el servidor y las comunidades afines.
-- Aprobar o rechazar decretos del Poder Ejecutivo.
-- Fiscalizar y controlar la acción del Poder Ejecutivo.
-- Representar a la comunidad en eventos de índole federativo en conjunto al poder Ejecutivo.
+- Aprobar o rechazar decretos del Poder Administrativo.
+- Fiscalizar y controlar la acción del Poder Administrativo.
+- Representar a la comunidad en eventos de índole federativo en conjunto al poder Administrativo.
 - Aprobar el presupuesto y gastos públicos.
-- Aprobar designaciones del Ejecutivo.
+- Aprobar designaciones del Administrativo.
 - Reformar esta Constitución según el procedimiento establecido.
 
 ### Artículo 15: Funcionamiento
 
 **Sesiones:**
-- El Alto Congreso Tlatocan se reunirá regularmente según calendario establecido para discutir y tomar decisiones así como crear, reformar, modificar o derogar lineamientos y normas conforme a la necesidad de la comunidad.
-- Sesiones extraordinarias pueden ser convocadas por la Presidencia o el Ejecutivo.
+- El Pleno Legislativo se reunirá regularmente según calendario establecido para discutir y tomar decisiones así como crear, reformar, modificar o derogar lineamientos y normas conforme a la necesidad de la comunidad.
+- Sesiones extraordinarias pueden ser convocadas por la Presidencia o el Administrativo.
 - Quórum mínimo: Mayoría simple de los miembros.
 
 **Procedimientos:**
@@ -309,7 +308,7 @@ El proceso para crear, modificar o derogar leyes seguirá estos pasos:
 3. **Comisión:** Revisión técnica por comisión especializada
 4. **Primera Lectura:** Presentación en sesión plenaria
 5. **Votación:** La votación se realizará según el reglamento establecido. El quórum mínimo legal requerido debe ser alcanzado para que la votación sea válida. El Secretario de la sala establecerá un tiempo límite de 3 minutos para que los miembros expresen su postura en forma de voto. El Secretario dará constancia de los votos obtenidos, incluyendo los votos a favor, en contra y las abstenciones. Mayoría simple para leyes ordinarias, 2/3 para reformas constitucionales.
-6. **Promulgación:** El Ejecutivo promulga o ejerce veto (superable con 2/3 del Legislativo)
+6. **Promulgación:** El Administrativo promulga o ejerce veto (superable con 2/3 del Legislativo)
 7. **Publicación:** En la Gaceta Oficial para entrada en vigor
 
 **Reglamento de Votación:**
@@ -321,8 +320,8 @@ El proceso para crear, modificar o derogar leyes seguirá estos pasos:
 ### Artículo 17: Elección del Poder Legislativo
 
 **Elección:**
-- Por votación popular entre los miembros del grupo Alfa.
-- Solo los miembros del grupo Alfa podrán postularse.
+- Por votación popular entre los Miembros Alfa de Alta Confianza.
+- Solo los Miembros Alfa de Alta Confianza podrán postularse.
 - Sistema proporcional cuando hay múltiples candidatos.
 
 **Mandato:**
@@ -354,7 +353,7 @@ El Poder Judicial tiene jurisdicción sobre:
 **Competencias Generales:**
 - Disputas entre jugadores y comunidades
 - Infracciones a la ley y la constitución
-- Conflictos entre el Poder Ejecutivo y Legislativo
+- Conflictos entre el Poder Administrativo y Legislativo
 - Interpretación constitucional
 
 **Competencias Específicas:**
@@ -392,19 +391,19 @@ Los jueces gozan de las siguientes garantías:
 
 **Rendición de Cuentas:**
 Los jueces del Poder Judicial deben:
-- Rendir cuentas ante el Congreso y el Ejecutivo sobre sus acciones y decisiones; Y ante el Tribunal Disciplinario por asuntos infractorios.
+- Rendir cuentas ante el Pleno Legislativo y el Administrativo sobre sus acciones y decisiones; Y ante el Tribunal Disciplinario por asuntos infractorios.
 - Informar regularmente sobre su trabajo y logros.
 
 ### Artículo 22: Selección de Jueces
 
 **Requisitos:**
-- Miembro del grupo Alfa
+- Miembro Alfa de Alta Confianza
 - Experiencia mínima en la comunidad
 - Historial de imparcialidad y respeto a las normas
 - Conocimiento de la Constitución y leyes
 
 **Proceso:**
-- Selección por el Poder Ejecutivo y Legislativo conjuntamente entre los miembros del grupo Alfa.
+- Selección por el Poder Administrativo y Legislativo conjuntamente entre los Miembros Alfa de Alta Confianza.
 - Evaluación de méritos y competencias
 - Período de prueba de 1 mes
 
@@ -416,26 +415,26 @@ Los jueces del Poder Judicial deben:
 
 ## TÍTULO IV: SISTEMA DE CONTRAPESOS Y EQUILIBRIOS
 
-### Artículo 23: Contrapesos para el Poder Ejecutivo
+### Artículo 23: Contrapesos para el Poder Administrativo
 
-- El Congreso Tlatocan puede iniciar el proceso de destitución al Presidente con una mayoría de 2/3 de los votos.
+- El Pleno Legislativo puede iniciar el proceso de destitución al Presidente con una mayoría de 2/3 de los votos.
 - La Suprema Corte puede declarar inconstitucionales las decisiones del Presidente.
-- El Congreso Tlatocan puede rechazar los nombramientos del Presidente para cargos públicos.
-- El Presidente no puede disolver el Congreso Tlatocan sin autorización de La Suprema Corte.
+- El Pleno Legislativo puede rechazar los nombramientos del Presidente para cargos públicos.
+- El Presidente no puede disolver el Pleno Legislativo sin autorización de La Suprema Corte.
 
 ### Artículo 24: Contrapesos para el Poder Legislativo
 
-- El Presidente puede vetar leyes aprobadas por el Congreso Tlatocan (superable con 2/3).
-- La Suprema Corte puede declarar inconstitucionales las leyes aprobadas por el Congreso Tlatocan.
-- El Presidente puede convocar sesiones especiales del Congreso Tlatocan.
-- Los miembros del Congreso pueden ser investigados y juzgados por la Suprema Corte.
+- El Presidente puede vetar leyes aprobadas por el Pleno Legislativo (superable con 2/3).
+- La Suprema Corte puede declarar inconstitucionales las leyes aprobadas por el Pleno Legislativo.
+- El Presidente puede convocar sesiones especiales del Pleno Legislativo.
+- Los miembros del Pleno Legislativo pueden ser investigados y juzgados por la Suprema Corte.
 
 ### Artículo 25: Contrapesos para el Poder Judicial
 
-- El Congreso Tlatocan puede iniciar el proceso de destitución a los jueces de la Suprema Corte con una mayoría de 2/3 de los votos.
+- El Pleno Legislativo puede iniciar el proceso de destitución a los jueces de la Suprema Corte con una mayoría de 2/3 de los votos.
 - El Presidente puede nombrar nuevos jueces para reemplazar a los que renuncian o son removidos.
-- El Congreso puede aprobar leyes que limiten la jurisdicción de la Suprema Corte.
-- Los jueces de la Suprema Corte deben ser aprobados por el Congreso Tlatocan.
+- El Pleno Legislativo puede aprobar leyes que limiten la jurisdicción de la Suprema Corte.
+- Los jueces de la Suprema Corte deben ser aprobados por el Pleno Legislativo.
 
 ### Artículo 26: Mecanismos Adicionales
 
@@ -454,11 +453,11 @@ Los jueces del Poder Judicial deben:
 **Objetivo:** Máximo tribunal de justicia e interpretación constitucional.
 
 **Composición:**
-- La Suprema Corte estará compuesta por 3-5 miembros elegidos del grupo Alfa.
+- La Suprema Corte estará compuesta por 3-5 miembros elegidos de los Miembros Alfa de Alta Confianza.
 - Los miembros deben ser respetados y experimentados en la comunidad.
 
 **Proceso de selección:**
-- Los miembros solo podrán ser seleccionados del grupo alfa conforme lo establecido en la presente constitución.
+- Los miembros solo podrán ser seleccionados de los Miembros Alfa de Alta Confianza conforme lo establecido en la presente constitución.
 - El plazo de permanencia corresponderá al máximo permitido para el poder judicial.
 - Los requisitos serán estipulados conforme a las leyes secundarias que de esta constitución emanen.
 
@@ -476,17 +475,17 @@ Los jueces del Poder Judicial deben:
 La Gaceta Oficial de Untravel es el órgano oficial de publicación y difusión de información relevante para la comunidad.
 
 **Estructura y Organización:**
-- La Gaceta Oficial estará bajo la responsabilidad del Vocero del Alto Congreso Tlatocan.
-- El Vocero será asistido por un equipo designado por el Alto Congreso.
+- La Gaceta Oficial estará bajo la responsabilidad del Vocero del Pleno Legislativo.
+- El Vocero será asistido por un equipo designado por el Alto Pleno Legislativo.
 
 **Funciones y Responsabilidades:**
-- Publicar las actas y resoluciones del Alto Congreso Tlatocan.
+- Publicar las actas y resoluciones del Pleno Legislativo.
 - Difundir información oficial sobre la Constitución y reglamentos.
 - Publicar avisos y anuncios importantes para la comunidad.
 - Mantener un registro histórico de la documentación oficial.
 
 **Relación con otros Órganos de Gobierno:**
-- La Gaceta Oficial colaborará con el Alto Congreso Tlatocan y la Suprema Corte.
+- La Gaceta Oficial colaborará con el Pleno Legislativo y la Suprema Corte.
 - Recibirá información oficial de los órganos de gobierno para su publicación.
 
 **Acceso y Difusión de la Información:**
@@ -533,7 +532,7 @@ Las Fuerzas Armadas del Servidor estarán sujetas a las siguientes limitaciones:
 - El entrenamiento será proporcionado por el ejército y será obligatorio para todos los miembros.
 
 **Financiamiento:**
-- El ejército será financiado por el gobierno del servidor, mediante un presupuesto anual aprobado por el Congreso.
+- El ejército será financiado por el gobierno del servidor, mediante un presupuesto anual aprobado por el Pleno Legislativo.
 
 ### Artículo 31: Sistema Financiero
 
@@ -556,14 +555,14 @@ Las Fuerzas Armadas del Servidor estarán sujetas a las siguientes limitaciones:
 - El límite de fondos dependerá directamente del gasto de los jugadores.
 
 **Administración de Fondos:**
-- El Poder Ejecutivo será responsable de administrar los fondos del servidor.
+- El Poder Administrativo será responsable de administrar los fondos del servidor.
 - El Poder Legislativo supervisará y aprobará los gastos.
 
 **Transparencia:**
 - Se publicarán informes financieros periódicos para garantizar la transparencia en la gestión de fondos.
 
 **Comercio y Economía:**
-El comercio en el servidor es completamente libre y sin regulaciones. Los jugadores pueden negociar y comerciar recursos y objetos entre sí sin intervención del Alto Congreso Tlatocan.
+El comercio en el servidor es completamente libre y sin regulaciones. Los jugadores pueden negociar y comerciar recursos y objetos entre sí sin intervención del Pleno Legislativo.
 
 ### Artículo 32: Protección de Datos y Seguridad
 
@@ -585,16 +584,16 @@ Los propietarios del servidor tienen la autoridad exclusiva para:
 - Tomar medidas para prevenir, investigar y responder a amenazas contra la estabilidad del servidor o gobierno.
 
 **Intervención en Casos de Sabotaje:**
-Si un poder del gobierno (Ejecutivo, Legislativo o Judicial) o un individuo intenta sabotear la estabilidad del servidor o gobierno, los propietarios pueden:
+Si un poder del gobierno (Administrativo, Legislativo o Judicial) o un individuo intenta sabotear la estabilidad del servidor o gobierno, los propietarios pueden:
 - Suspender o revocar accesos a cuentas o servicios.
 - Restringir o limitar funcionalidades del servidor.
 - Realizar cambios en la configuración del servidor para proteger la seguridad.
 
 **Procedimiento de Intervención:**
 Los propietarios deben:
-- Notificar al poder afectado y al Congreso antes de tomar cualquier medida.
+- Notificar al poder afectado y al Pleno Legislativo antes de tomar cualquier medida.
 - Proporcionar pruebas de la amenaza o sabotaje.
-- El Congreso puede revisar y aprobar o rechazar las medidas tomadas por los propietarios.
+- El Pleno Legislativo puede revisar y aprobar o rechazar las medidas tomadas por los propietarios.
 
 **Limitaciones:**
 Los propietarios no pueden utilizar sus poderes para:
@@ -606,7 +605,7 @@ Los propietarios no pueden utilizar sus poderes para:
 Los propietarios son responsables de:
 - Garantizar la seguridad e integridad del servidor.
 - Informar a la comunidad sobre cualquier incidente de sabotaje o seguridad.
-- Rendir cuentas ante el Congreso y el Tribunal Supremo por cualquier acción tomada bajo este artículo.
+- Rendir cuentas ante el Pleno Legislativo y el Tribunal Supremo por cualquier acción tomada bajo este artículo.
 
 ### Artículo 33: Derechos de Autor y Propiedad Intelectual
 
@@ -696,10 +695,10 @@ La constitución es la ley suprema del servidor.
 
 **Procedimiento para Proponer Reformas:**
 - Cualquier miembro de la comunidad puede proponer reformas a la Constitución.
-- Las reformas deben ser presentadas por escrito al Alto Congreso Tlatocan.
+- Las reformas deben ser presentadas por escrito al Pleno Legislativo.
 
 **Aprobación:**
-- Las reformas requieren la aprobación de la mayoría absoluta del Alto Congreso Tlatocan.
+- Las reformas requieren la aprobación de la mayoría absoluta del Pleno Legislativo.
 - La Suprema Corte revisará la enmienda para asegurarse de que sea constitucional.
 
 **Notificación y Publicación:**
@@ -717,16 +716,16 @@ Los partidos políticos deberán estar compuestos por un mínimo de 5 integrante
 
 **Candidaturas:**
 Cada partido político podrá proponer:
-a. Un candidato para el Poder Ejecutivo.
-b. Un máximo de candidatos para el Legislativo equivalente al 33% del total de escaños disponibles en el Congreso.
+a. Un candidato para el Poder Administrativo.
+b. Un máximo de candidatos para el Legislativo equivalente al 33% del total de escaños disponibles en el Pleno Legislativo.
 c. Un candidato para el Poder Judicial.
 
 **Coaliciones:**
-Se permiten coaliciones entre partidos políticos limitando a un candidato al poder Ejecutivo por coalición.
+Se permiten coaliciones entre partidos políticos limitando a un candidato al poder Administrativo por coalición.
 
 **Período Electoral:**
 El período electoral será:
-a. Anual para el Poder Ejecutivo.
+a. Anual para el Poder Administrativo.
 b. Cada 6 meses para el Legislativo.
 c. Anual para el Poder Judicial.
 
@@ -734,8 +733,8 @@ c. Anual para el Poder Judicial.
 Se permite la reelección. Los candidatos ganadores gozarán de fuero, entendido como inmunidad penal, durante su mandato.
 
 **Requisitos para Cargos Públicos:**
-- Solo los miembros del grupo Alfa podrán ocupar cargos en los tres poderes (Ejecutivo, Legislativo y Judicial).
-- Para ser miembro del grupo Alfa, se requiere:
+- Solo los Miembros Alfa de Alta Confianza podrán ocupar cargos en los tres poderes (Administrativo, Legislativo y Judicial).
+- Para ser Miembro Alfa de Alta Confianza, se requiere:
   - Ser jugador activo.
   - Tener una antigüedad mínima de [tiempo determinado, por ejemplo, 2 años] en el servidor.
   - O haber demostrado un compromiso excepcional con la comunidad.
@@ -751,8 +750,8 @@ a. Si un candidato resulta ganador y actualmente está desempeñándose en un ca
 b. En caso de que la licencia sea aprobada el cargo ganado será cubierto por la persona suplente previamente ratificada en la candidatura y no podrá abandonar el cargo actual hasta finalizar el periodo asignado o con otra licencia autorizada.
 c. Los suplentes que tomen la titularidad del cargo ganado tendrán que prestar juramento como es debido y de forma oficial y pública.
 
-**Composición del Congreso:**
-El Congreso estará compuesto por un máximo de 10 miembros.
+**Composición del Pleno Legislativo:**
+El Pleno Legislativo estará compuesto por un máximo de 10 miembros.
 
 **Registro de Candidaturas:**
 Los partidos políticos deberán registrar sus candidaturas ante la autoridad electoral correspondiente.
@@ -788,7 +787,7 @@ Durante los primeros 30 días:
 1. Se organizarán las primeras elecciones para los tres poderes
 2. Se establecerán los procedimientos operativos de cada poder
 3. Se crearán los códigos y reglamentos derivados
-4. El Ejecutivo provisional asegurará la continuidad operativa
+4. El Administrativo provisional asegurará la continuidad operativa
 
 ---
 
@@ -801,7 +800,7 @@ Durante los primeros 30 días:
 - **Resolución:** Si la mediación no es efectiva, el Poder Judicial tomará una decisión final.
 
 **Apelación:**
-Cualquier miembro puede apelar una decisión del Poder Judicial al Huey Tlatoani (Poder Ejecutivo), quien puede:
+Cualquier miembro puede apelar una decisión del Poder Judicial al Titular del Administrativo (Poder Administrativo), quien puede:
 - Ratificar la decisión
 - Revocar la decisión
 - Ordenar una nueva investigación
@@ -813,7 +812,7 @@ Las sanciones por incumplimiento de las reglas o participación en conflictos pu
 - Expulsión permanente
 
 **Publicación de Resoluciones:**
-Todas las resoluciones finales del Poder Judicial y decisiones del Huey Tlatoani serán publicadas en la Gaceta Oficial de Untravel para garantizar la transparencia y conocimiento de la comunidad.
+Todas las resoluciones finales del Poder Judicial y decisiones del Titular del Administrativo serán publicadas en la Gaceta Oficial de Untravel para garantizar la transparencia y conocimiento de la comunidad.
 
 ---
 
@@ -847,12 +846,12 @@ El equipo administrativo será responsable de:
 ## Regulación de Eventos y Actividades
 
 **Requisitos para la Organización de Eventos:**
-- **Autorización:** Los organizadores deben obtener autorización previa del Alto Congreso Tlatocan o del Huey Tlatoani.
+- **Autorización:** Los organizadores deben obtener autorización previa del Pleno Legislativo o del Titular del Administrativo.
 - **Notificación:** Los organizadores deben notificar a la comunidad con al menos 72 horas de anticipación.
 - **Reglas:** Los eventos deben cumplir con las reglas y normas del servidor.
 
 **Tipos de Eventos:**
-- **Eventos Oficiales:** Organizados por el Alto Congreso Tlatocan o el Huey Tlatoani.
+- **Eventos Oficiales:** Organizados por el Pleno Legislativo o el Titular del Administrativo.
 - **Eventos Comunitarios:** Organizados por miembros de la comunidad con autorización.
 - **Eventos Privados:** Organizados por miembros de la comunidad sin autorización, pero sin impacto en la comunidad.
 
@@ -861,12 +860,12 @@ El equipo administrativo será responsable de:
 - **Participantes:** Deben respetar las reglas y normas del evento.
 
 **Presupuesto y Recursos:**
-- El Huey Tlatoani puede asignar recursos de su presupuesto para eventos comunitarios, previa solicitud y justificación de los organizadores.
-- Los organizadores de eventos comunitarios deben presentar un presupuesto detallado y obtener la aprobación del Huey Tlatoani antes de recibir recursos.
+- El Titular del Administrativo puede asignar recursos de su presupuesto para eventos comunitarios, previa solicitud y justificación de los organizadores.
+- Los organizadores de eventos comunitarios deben presentar un presupuesto detallado y obtener la aprobación del Titular del Administrativo antes de recibir recursos.
 
 **Límites de Gasto y Reserva:**
-- El Huey Tlatoani debe mantener una reserva mínima del 20% del presupuesto anual para gastos imprevistos.
-- El Huey Tlatoani no puede asignar más del 50% del presupuesto anual para eventos comunitarios.
+- El Titular del Administrativo debe mantener una reserva mínima del 20% del presupuesto anual para gastos imprevistos.
+- El Titular del Administrativo no puede asignar más del 50% del presupuesto anual para eventos comunitarios.
 
 ---
 
@@ -912,10 +911,10 @@ Esta Constitución ha sido elaborada y aprobada por la Asamblea Constituyente de
 **SaamTorress**  
 *Legislador del Poder Legislativo*
 
-**Poder Ejecutivo:**
+**Poder Administrativo:**
 
 **Lulu81957**  
-*Presidenta del Poder Ejecutivo*
+*Presidenta del Poder Administrativo*
 
 ---
 
