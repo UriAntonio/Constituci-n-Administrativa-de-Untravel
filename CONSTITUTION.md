@@ -19,63 +19,63 @@ Nosotros, los miembros de la comunidad de la Unión Untravel, con el propósito 
 ## Índice Constitucional
 
 ### **TÍTULO I: PRINCIPIOS FUNDAMENTALES**
-- [Artículo 1: Naturaleza de la Unión](#título-i-principios-fundamentales)
+- [Artículo 1: Naturaleza de la Unión](#artículo-1-naturaleza-de-la-unión)
 - [Artículo 2: Definiciones](#artículo-2-definiciones)
 - [Artículo 3: La Unión Untravel](#artículo-3-la-unión-untravel)
 - [Artículo 4: Valores y Principios Rectores](#artículo-4-valores-y-principios-rectores)
 
 ### **TÍTULO II: DERECHOS Y GARANTÍAS FUNDAMENTALES**
-- [Artículo 5: Derechos Fundamentales](#título-ii-derechos-y-garantías-fundamentales)
+- [Artículo 5: Derechos Fundamentales](#artículo-5-derechos-fundamentales)
 - [Artículo 6: Libertades de los Jugadores](#artículo-6-libertades-de-los-jugadores)
 - [Artículo 7: Garantías Procesales](#artículo-7-garantías-procesales)
 
-### **TÍTULO III: ORGANIZACIÓN DEL PODER PÚBLICO**
+### **TÍTULO III: ORGANIZACIÓN DE LOS PODERES DE LA UNIÓN**
 
 #### **Capítulo I: Poder Administrativo - Titular del Administrativo**
-- [Artículo 8: Naturaleza y Objetivos](#capítulo-i-poder-ejecutivo---)
+- [Artículo 8: Naturaleza y Objetivos](#artículo-8-naturaleza-y-objetivos)
 - [Artículo 9: Responsabilidades](#artículo-9-responsabilidades)
 - [Artículo 10: Atribuciones Específicas](#artículo-10-atribuciones-específicas)
 - [Artículo 11: Limitaciones](#artículo-11-limitaciones)
 - [Artículo 12: Elección y Mandato del Poder Administrativo](#artículo-12-elección-y-mandato-del-poder-administrativo)
 
 #### **Capítulo II: Poder Legislativo - Pleno Legislativo**
-- [Artículo 13: Naturaleza y Composición](#capítulo-ii-poder-legislativo---)
+- [Artículo 13: Naturaleza y Composición](#artículo-13-naturaleza-y-composición)
 - [Artículo 14: Atribuciones](#artículo-14-atribuciones)
 - [Artículo 15: Funcionamiento](#artículo-15-funcionamiento)
 - [Artículo 16: Proceso Legislativo](#artículo-16-proceso-legislativo)
 - [Artículo 17: Elección y Mandato del Poder Legislativo](#artículo-17-elección-y-mandato-del-poder-legislativo)
 
 #### **Capítulo III: Poder Judicial**
-- [Artículo 18: Naturaleza y Objetivos](#capítulo-iii-poder-judicial)
+- [Artículo 18: Naturaleza y Objetivos](#artículo-18-naturaleza-y-objetivos)
 - [Artículo 19: Estructura Judicial](#artículo-19-estructura-judicial)
 - [Artículo 20: Jurisdicción](#artículo-20-jurisdicción)
 - [Artículo 21: Garantías Judiciales](#artículo-21-garantías-judiciales)
 - [Artículo 22: Selección de Jueces](#artículo-22-selección-de-jueces)
 
 ### **TÍTULO IV: SISTEMA DE CONTRAPESOS Y EQUILIBRIOS**
-- [Artículo 23: Contrapesos para el Poder Administrativo](#título-iv-sistema-de-contrapesos-y-equilibrios)
+- [Artículo 23: Contrapesos para el Poder Administrativo](#artículo-23-contrapesos-para-el-poder-administrativo)
 - [Artículo 24: Contrapesos para el Poder Legislativo](#artículo-24-contrapesos-para-el-poder-legislativo)
 - [Artículo 25: Contrapesos para el Poder Judicial](#artículo-25-contrapesos-para-el-poder-judicial)
 - [Artículo 26: Mecanismos Adicionales](#artículo-26-mecanismos-adicionales)
 
 ### **TÍTULO V: ÓRGANOS CONSTITUCIONALES AUTÓNOMOS**
-- [Artículo 27: Suprema Corte](#título-v-órganos-constitucionales-autónomos)
+- [Artículo 27: Suprema Corte](#artículo-27-suprema-corte)
 - [Artículo 28: Tribunal Disciplinario](#artículo-28-tribunal-disciplinario)
 - [Artículo 29: La Gaceta Oficial de Untravel](#artículo-29-la-gaceta-oficial-de-untravel)
 
 ### **TÍTULO VI: SISTEMAS ESPECIALIZADOS**
-- [Artículo 30: Fuerzas Armadas del Servidor](#título-vi-sistemas-especializados)
+- [Artículo 30: Fuerzas Armadas del Servidor](#artículo-30-fuerzas-armadas-del-servidor)
 - [Artículo 31: Sistema Financiero](#artículo-31-sistema-financiero)
 - [Artículo 32: Protección de Datos y Seguridad](#artículo-32-protección-de-datos-y-seguridad)
 - [Artículo 33: Derechos de Autor y Propiedad Intelectual](#artículo-33-derechos-de-autor-y-propiedad-intelectual)
 - [Artículo 34: Transparencia](#artículo-34-transparencia)
 
 ### **TÍTULO VII: REFORMAS Y PROCEDIMIENTOS CONSTITUCIONALES**
-- [Artículo 35: Reforma Constitucional](#título-vii-reformas-y-procedimientos-constitucionales)
+- [Artículo 35: Reforma Constitucional](#artículo-35-reforma-constitucional)
 - [Artículo 36: Proceso Electoral](#artículo-36-proceso-electoral)
 
 ### **TÍTULO VIII: DISPOSICIONES TRANSITORIAS Y FINALES**
-- [Artículo 37: Supremacía Constitucional](#título-viii-disposiciones-transitorias-y-finales)
+- [Artículo 37: Supremacía Constitucional](#artículo-37-supremacía-constitucional)
 - [Artículo 38: Interpretación](#artículo-38-interpretación)
 - [Artículo 39: Relaciones Externas](#artículo-39-relaciones-externas)
 - [Artículo 40: Vigencia y Transición](#artículo-40-vigencia-y-transición)
@@ -115,7 +115,7 @@ Para efectos de esta Constitución, se entenderá por:
 - **Poder Judicial:** Los Administradores del servidor y comunidades, responsables de garantizar el cumplimiento de las normas y resolución de conflictos.
 - **Poder Administrativo:** El Titular del Administrativo, ratificado por la comunidad, responsable de tomar decisiones administrativas.
 - **Poder Legislativo:** El Pleno Legislativo, responsable de crear y modificar las leyes y normas de la comunidad.
-- **Gaceta Oficial:** El registro oficial de las leyes y decisiones tomadas por los poderes públicos.
+- **Gaceta Oficial:** El registro oficial de las leyes y decisiones tomadas por los poderes de la Unión.
 - **Derechos Untravel:** Conjuntos de normativas en materia de bienestar que constituyen las garantías de las que gozan los miembros.
 
 ### Artículo 3: La Unión Untravel
@@ -198,7 +198,7 @@ En todos los procedimientos administrativos y disciplinarios se garantizará:
 
 ---
 
-## TÍTULO III: ORGANIZACIÓN DEL PODER PÚBLICO
+## TÍTULO III: ORGANIZACIÓN DE LOS PODERES DE LA UNIÓN
 
 ### Capítulo I: Poder Administrativo - Titular del Administrativo
 
@@ -309,7 +309,7 @@ El Poder Legislativo tiene las siguientes atribuciones:
 El proceso para crear, modificar o derogar leyes seguirá estos pasos:
 
 1. **Iniciativa:** Presentación de propuesta por Issue en GitHub o miembro del Pleno Legislativo
-2. **Debate Público:** Mínimo 3 días para discusión legislativa
+2. **Debate Legislativo:** Mínimo 3 días para discusión legislativa
 3. **Comisión:** Revisión técnica por comisión especializada
 4. **Primera Lectura:** Presentación en sesión plenaria y al resto de la comunidad
 5. **Votación:** La votación se realizará según el reglamento establecido. El quórum mínimo legal requerido debe ser alcanzado para que la votación sea válida. El Secretario de la sala establecerá un tiempo límite de 3 minutos para que los miembros expresen su postura en forma de voto. El Secretario dará constancia de los votos obtenidos, incluyendo los votos a favor, en contra y las abstenciones. Mayoría simple para leyes ordinarias, 2/3 partes de los votos para reformas constitucionales.
@@ -424,7 +424,7 @@ Los jueces del Poder Judicial deben:
 
 - El Pleno Legislativo puede iniciar el proceso de destitución al Titular Administrativo con una mayoría de 2/3 partes de los votos.
 - La Suprema Corte puede declarar inconstitucionales las decisiones del Titular Administrativo.
-- El Pleno Legislativo puede rechazar los nombramientos del Titular Administrativo para cargos públicos.
+- El Pleno Legislativo puede rechazar los nombramientos del Titular Administrativo para cargos bajo su elegibilidad.
 - El Titular Administrativo no puede disolver el Pleno Legislativo sin autorización de La Suprema Corte.
 
 ### Artículo 24: Contrapesos para el Poder Legislativo
@@ -443,7 +443,7 @@ Los jueces del Poder Judicial deben:
 
 ### Artículo 26: Mecanismos Adicionales
 
-- El Tribunal Disciplinario puede investigar y sancionar a funcionarios públicos.
+- El Tribunal Disciplinario puede investigar y sancionar a funcionarios de la Unión.
 - Una Defensoría de la Comunidad puede recibir quejas y denuncias de los jugadores.
 - Un sistema de referéndum puede permitir a los ciudadanos decidir sobre leyes y políticas importantes.
 - Los poderes están sujetos a los contrapesos establecidos en esta constitución.
@@ -737,7 +737,7 @@ c. Anual para el Poder Judicial.
 **Reelección y Fuero:**
 Se permite la reelección. Los candidatos ganadores gozarán de fuero, entendido como inmunidad penal, durante su mandato.
 
-**Requisitos para Cargos Públicos:**
+**Requisitos para Cargos en la Unión:**
 - Solo los Miembros Alfa de Alta Confianza podrán ocupar cargos en los tres poderes (Administrativo, Legislativo y Judicial).
 - Para ser Miembro Alfa de Alta Confianza, se requiere:
   - Ser jugador activo.
